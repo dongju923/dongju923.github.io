@@ -1,5 +1,5 @@
 ---
-parmalink: /aboutme/
+permalink: /aboutme/
 title: "자기소개"
 toc: true
 toc_sticky: true
