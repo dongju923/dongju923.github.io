@@ -121,9 +121,11 @@
   @include clearfix();
   float: left;
   width: 100%;
-  
+
   /* next/previous buttons */
   &--pager {
+    margin-top: 0em;
+    padding-top: 0em;
     display: block;
     padding: 1em 2em;
     //float: left;
@@ -134,9 +136,9 @@
     text-align: center;
     text-decoration: none;
     color: $muted-text-color;
-    border: 1px solid mix(#000, $border-color, 25%);
+    border: 1px solid mix(#fff, $border-color, 60%);
     border-radius: $border-radius;
-    
+
     .prev_next {
       font-family: $cute;
       color:#ffd861;
