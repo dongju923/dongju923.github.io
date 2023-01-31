@@ -2,5 +2,7 @@
 main:
   - title: "홈"
     url: https://dongju923.github.io/
+  - title: "어바웃미"
+    url: /aboutme/
   - title: "카테고리"
     url: /categories/
