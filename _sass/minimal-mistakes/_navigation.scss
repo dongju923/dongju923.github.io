@@ -149,7 +149,14 @@
     }
 
     &:hover {
-      @include yiq-contrasted($muted-text-color);
+      // @include yiq-contrasted($muted-text-color);
+      background: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d);
+    }
+    
+    &:hover span {
+      background: none;
+      color: #fff;
+      -webkit-text-fill-color: #fff;
     }
 
     &:first-child {
