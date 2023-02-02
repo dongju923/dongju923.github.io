@@ -11,6 +11,10 @@ toc_sticky: true
   
 <br/><br/>
   
+<h3>💻 Github Stats 💻</h3>
+  
+![Dongju923's GitHub stats](https://github-readme-stats.vercel.app/api?username=dongju923&theme=vue&show_icons=true)
+  
 <h3>💻 Tech Stack 💻</h3>
   
 <br/>
