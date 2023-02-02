@@ -142,11 +142,12 @@
     background: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
+    /*
     .prev_next {
       font-family: $sans-serif;
       color:#ffd861;
     }
+    */
 
     &:hover {
       // @include yiq-contrasted($muted-text-color);
