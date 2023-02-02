@@ -5,7 +5,7 @@ toc: true
 toc_sticky: true
 ---
 
-![header](https://capsule-render.vercel.app/api?type=waving&&color=gradient&height=auto&section=header&fontSize=90)
+![header](https://capsule-render.vercel.app/api?type=waving&&color=gradient&height300&section=header&fontSize=90)
 
 <div align = "center">
   
@@ -35,4 +35,4 @@ toc_sticky: true
 
 <br/>
 
-![footer](https://capsule-render.vercel.app/api?type=waving&&color=gradient&height=auto&section=footer&fontSize=90)
+![footer](https://capsule-render.vercel.app/api?type=waving&&color=gradient&height=300&section=footer&fontSize=90)
