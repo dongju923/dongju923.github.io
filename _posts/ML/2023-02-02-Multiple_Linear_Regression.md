@@ -58,7 +58,7 @@ print(f"새로운 데이터를 넣었을 때 결과: {test2}")
 
 ### 실전예제
 
-이번에는 본격적으로 <span style=color:violet;>"분석"</span> 이라는 것을 실시해보자.  
+이번에는 본격적으로 <span style="color:violet">"분석"</span> 이라는 것을 실시해보자.  
 지금 실시할 예제는 '맨해튼의 주택임대료' 데이터를 사용한다. 데이터는 [여기](https://github.com/Codecademy/datasets/blob/master/streeteasy/manhattan.csv)에서 받을 수 있다.  
 우선 pandas를 사용하여 데이터를 불러와보자.
 
