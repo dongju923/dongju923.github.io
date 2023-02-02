@@ -155,8 +155,8 @@
     
     &:hover span {
       background: none;
-      color: #fff;
-      -webkit-text-fill-color: #fff;
+      color: #252a34;
+      -webkit-text-fill-color: #252a34;
     }
 
     &:first-child {
@@ -174,7 +174,9 @@
     &.disabled-first-child {
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
-      color: rgba($muted-text-color, 0.5);
+      //color: rgba($muted-text-color, 0.5);
+      color: #252a34;
+      -webkit-text-fill-color: #252a34;
       pointer-events: none;
       cursor: not-allowed;
     }
@@ -183,7 +185,9 @@
       margin-bottom: 1em;
       border-top-left-radius: 0;
       border-top-right-radius: 0;
-      color: rgba($muted-text-color, 0.5);
+      //color: rgba($muted-text-color, 0.5);
+      color: #252a34;
+      -webkit-text-fill-color: #252a34;
       pointer-events: none;
       cursor: not-allowed;
     }
