@@ -3,7 +3,7 @@ title: "텐서플로우 Gradient Tape로 자동 미분하기"
 toc: true
 toc_sticky: true
 categories: Tensorflow
-math: true
+use_math: true
 ---
 
 
