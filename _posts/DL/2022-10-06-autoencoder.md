@@ -1,6 +1,7 @@
 ---
 title: "오토인코더(Autoencoder)"
 toc: true
+categories: DL
 ---
 # 오토인코더(Autoencoder)란?
 
