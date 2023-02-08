@@ -3,6 +3,7 @@ title: "로지스틱 회귀란 무엇인가?"
 toc: true
 toc_sticky: true
 categories: ML
+use_math: true
 ---
 
 ### 정의
