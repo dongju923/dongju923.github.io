@@ -2,6 +2,7 @@
 title: "다중 로지스틱 회귀분석을 해보자!(2편)"
 toc: true
 toc_sticky: true
+use_math: true
 categories: ML
 ---
 
