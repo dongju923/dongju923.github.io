@@ -119,3 +119,4 @@ print(model.predict_proba([[49]]))
 
 다음 포스팅에서 다중 로지스틱 회귀분석을 해보자. 실제 데이터는 위의 데이터처럼 간단하지 않다. 독립변수도 여러개이고, 심지어 종속변수도 여러개인 경우도 있다. 
 
+[다중 로지스틱 회귀분석](https://dongju923.github.io/ml/Multiple_Logistic_Regression/)

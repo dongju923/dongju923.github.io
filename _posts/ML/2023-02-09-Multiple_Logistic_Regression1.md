@@ -1,11 +1,12 @@
 ---
-title: "다중 로지스틱 회귀분석을 해보자!"
+title: "다중 로지스틱 회귀분석을 해보자!(1편)"
 toc: true
 toc_sticky: true
 categories: ML
 ---
 
-이번에는 다중로지스틱 회귀를 해보자. 로지스틱회귀를 모르는 사람은 [이글](https://dongju923.github.io/ml/Logistic_Regression/)을 참고하자.  
+이번에는 다중로지스틱 회귀를 해보자.  
+로지스틱회귀를 모르는 사람은 [이글](https://dongju923.github.io/ml/Logistic_Regression/)을 참고하자.  
 
 
 ### 데이터셋 로드
