@@ -17,6 +17,7 @@ toc_sticky: true
 OpenAI의 인증 시스템이 필요하다.  
 OpenAI의 이메일주소, 비밀번호와 세션 토큰과 엑세스 토큰이 필요하다.  
 먼저 세션 토큰을 얻는 방법은 [http://chat.openai.com](http://chat.openai.com) 여기에 들어가서 `F12` 키를 눌러 DevTool로 들어간다. 그 중 Application이라고 써있는 항목에 들어가면 목록에 `__Secure-next-auth.session-token` 이라는 이름이 있는데, 이 값이 세션 토큰이다. 복사에서 config에 붙여넣자.  
+아래 사진은 세션토큰을 얻는 방법이다.  
 
 ![png](/assets/images/Project/session_token.png)  
 
