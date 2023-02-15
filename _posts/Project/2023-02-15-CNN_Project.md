@@ -1,5 +1,5 @@
 ---
-title: "프로젝트-시계열데이터 이진분류"
+title: "시계열데이터 이진분류"
 categories: Project
 toc: true
 toc_sticky: true
