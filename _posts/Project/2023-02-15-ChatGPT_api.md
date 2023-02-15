@@ -16,11 +16,11 @@ toc_sticky: true
 ### OpenAI Auth
 OpenAI의 인증 시스템이 필요하다.  
 OpenAI의 이메일주소, 비밀번호와 세션 토큰과 엑세스 토큰이 필요하다.  
-먼저 세션 토큰을 얻는 방법은 http://chat.openai.com 여기에 들어가서 `F12` 키를 눌러 DevTool로 들어간다. 그 중 Application이라고 써있는 항목에 들어가면 목록에 `__Secure-next-auth.session-token` 이라는 이름이 있는데, 이 값이 세션 토큰이다. 복사에서 config에 붙여넣자.  
+먼저 세션 토큰을 얻는 방법은 [http://chat.openai.com](http://chat.openai.com) 여기에 들어가서 `F12` 키를 눌러 DevTool로 들어간다. 그 중 Application이라고 써있는 항목에 들어가면 목록에 `__Secure-next-auth.session-token` 이라는 이름이 있는데, 이 값이 세션 토큰이다. 복사에서 config에 붙여넣자.  
 
 ![png](/assets/images/Project/session_token.png)  
 
-그 다음은 엑세스 토큰을 얻어야 하는데, 이는 https://chat.openai.com/api/auth/session 여기로 들어가면 "accessToken"의 값이 있는데, 이를 넣어주면 된다.
+그 다음은 엑세스 토큰을 얻어야 하는데, 이는 [https://chat.openai.com/api/auth/session](https://chat.openai.com/api/auth/session) 여기로 들어가면 "accessToken"의 값이 있는데, 이를 넣어주면 된다.
 
 ### 코드 작성
 위에서 얻은 이메일과, 패스워드, 세션토큰과, 엑세스 토큰을 입력한 뒤에 prompt에 질문을 넣으면 된다.  
