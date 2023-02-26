@@ -1,6 +1,6 @@
 ---
 title: "ChatGPT API 사용하기"
-categories: Project
+categories: DL
 toc: true
 toc_sticky: true
 ---
