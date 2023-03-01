@@ -1,5 +1,5 @@
 ---
-title: "자연어처리-3 Attention Mechanism"
+title: "자연어처리-4 Attention Mechanism"
 toc: true
 toc_sticky: true
 categories: DL
