@@ -109,7 +109,7 @@ $v_t$는 디코더의 은닉상태의 정보 외에도 인코더에서 모든 �
 ![png](/assets/images/NLP/attention_8.png)
 
 가중치 행렬과 보정된 컨텍스트 벡터를 곱한후 하이퍼볼릭탄젠트 함수를 지나서 새로운 벡터 $\bar{s}_t$를 얻는다.  
-수식으로 표현하면 $\hat{y}_t$ = $tanh(W_c[a_t;s_t]+b_c)$로 정의된다.  
+수식으로 표현하면 $\bar{s}_t$ = $tanh(W_c[a_t;s_t]+b_c)$로 정의된다.  
 $a_t;s_t$는 concat이라는 뜻이고 보정된 컨텍스트 벡터를 나타낸다.  
 마지막으로 최종 예측은 $\hat{y}_t$ = $softmax(W_y\bar{s}_t) + b_y$로 계산된다.  
 
