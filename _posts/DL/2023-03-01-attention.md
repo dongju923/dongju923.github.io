@@ -61,7 +61,7 @@ seq2seq에 어텐션을 적용한 모델의 디코더는 다음과 같은 순서
 ![png](/assets/images/NLP/attention_4.png)
 
 <span style="color:violet">Attention Score는 디코더의 시점 $t$에서 새로운 단어를 예측하기 위해 디코더의 은닉상태 $s_t^T$와 인코더의 은닉상태 $h_1$~$h_t$들이 얼마나 유사한지를 계산하는 점수이다.</span>  
-위 그림은 디코더의 시점 t에서의 은닉상태인 s_t와 인코더의 은닉상태인 h_t의 Attention Score를 구하는 과정을 보여준다.  
+위 그림은 디코더의 시점 t에서의 은닉상태인 $s_t$와 인코더의 은닉상태인 $h_t$의 Attention Score를 구하는 과정을 보여준다.  
 $h_1 ... h_t$는 $t$ 시점에서 인코더의 은닉상태이고 $s_t^T$는 t시점의 디코더 은닉상태를 나타낸다. $T$는 $s_{t-i}$부터 $s_t$의 합?이라고 생각하면 된다.(이전 시점의 은닉상태도 포함하고 있으므로)  
 그림에서도 알 수 있듯이 인코더의 모든 은닉상태에 유사도를 구하는 것이 목표이므로 내적(dot product)한다. 결과는 스칼라값이 나온다.  
 수식으로는 $e^t = [s_t^Th_1 + s_t^Th_2 ... + s_t^Th_t]$ 와 같이 나타낼 수 있다.
@@ -70,15 +70,15 @@ $h_1 ... h_t$는 $t$ 시점에서 인코더의 은닉상태이고 $s_t^T$는 t�
 
 ![png](/assets/images/NLP/attention_5.png)
 
-위에서 얻는 Attention Score e^t에 softmax함수를 적용해서 모든 값의 합이 1이 되는 Attention Distribution을 얻는다.  
+위에서 얻는 Attention Score $e^t$에 softmax함수를 적용해서 모든 값의 합이 1이 되는 Attention Distribution을 얻는다.  
 수식으로는 $\alpha^t = softmax(e^t)$ 와 같이 나타낸다. softmax를 통해서 나온 값을 Attention Weight(어텐션 가중치)라고 한다. 즉, 학습과정에서 최적화 된다.
 
 ### 과정3: Attention Value
 
 ![png](/assets/images/NLP/attention_6.png)
 
-최종적으로 위에서 구한 Attention Weight와 인코더의 각 은닉상태를 통해 최종적인 Attention Value $a_t$를 구한다.  
-식으로는 $a = \sum_{k=1}^{N} \alpha_i^t h_t$ 로 나타낼 수 있다.  
+최종적으로 위에서 구한 Attention Weight와 인코더의 각 은닉상태를 가중합하여 최종적인 Attention Value $a_t$를 구한다.  
+식으로는 $a_t = \sum_{k=1}^{N} \alpha_i^t h_t$ 로 나타낼 수 있다.  
 결론적으로 $a_t$ 위에서 말한 보정된 컨텍스트 벡터가 된다.
 
 ### Query, Key, Value
