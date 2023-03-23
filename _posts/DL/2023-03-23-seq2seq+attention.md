@@ -11,7 +11,7 @@ categories: DL
 
 seq2seq 포스팅은 [여기](https://dongju923.github.io/dl/seq2seq_ex/), 어텐션 매커니즘 포스팅은 [여기](https://dongju923.github.io/dl/attention/)를 참고하면된다.  
 
-데이터 불러오기 및 전처리는 seq2seq포스팅과 같기때문에 모델 생성부터 시작하겠다.
+데이터 불러오기 및 전처리는 seq2seq포스팅과 같기때문에 모델생성 부분부터 시작하겠다.
 
 
 ```python
