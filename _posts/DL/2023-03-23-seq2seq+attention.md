@@ -62,14 +62,13 @@ decoder_outputs = decoder_dense(concat)
 ```
 
 여기서 지난 seq2seq와는 다르게 어텐션을 적용하는 코드가 추가되었다. 자세히 한번 보자.  
-`S_ = tf.concat([state_h[:, tf.newaxis, :], decoder_outputs[:, :-1, :]], axis=1)` 이 코드는 디코더의 마지막 시점, 즉 마지막 hidden state를 제외한 모든 시점과 인코더의 hidden state와 concat한다.  
+`S_ = tf.concat([state_h[:, tf.newaxis, :], decoder_outputs[:, :-1, :]], axis=1)` 이 코드는 디코더의 마지막 시점, 즉 마지막 hidden state를 제외한 모든 시점과 인코더의 hidden state와 concat한다. 인코더의 은닉상태 형태는 (None, 64)이므로 `decoder_outputs`와 형태를 맞춰주기 위해서 축을 추가하였다.  
 
 ```python
 attention = Attention(name="Attention_Layer")
 context_vector = attention([S_, state_h])
 ```
 
-이 코드는 인코더의 은닉상태는 (None, 64)이므로 `decoder_outputs`와 형태를 맞춰주기 위해서 축을 추가하였다.  
 그 다음 attention Layer에, concat한 값과 인코더의 마지막 은닉상태를 넣어준다.  
 
 ```python
