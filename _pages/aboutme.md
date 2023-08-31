@@ -5,6 +5,7 @@ toc: true
 toc_sticky: true
 ---
 
+<div align="center">
 
 <h1 style="font-size:170%; font-weight:bold">안동주</h1>
 
@@ -241,4 +242,5 @@ toc_sticky: true
 <li>High</li>
 </div>
 
+</div>
 
