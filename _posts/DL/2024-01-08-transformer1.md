@@ -104,6 +104,7 @@ Layer Normalization은 일종의 정규화이다. 텐서의 마지막 차원에 
 Self-Attention과는 다르게 Cross-Attention을 하는 부분이다. 디코더의 두번 째 레이어에 해당하며, 인코더에서 넘어온 k, v를 가지고 디코더의 q와
 Attention 연산을 수행한다.  
 
-
-
-
+### 참고자료
+1. [위키독스](https://wikidocs.net/31379)  
+2. [yangoos57님 블로그](https://yangoos57.github.io/blog/DeepLearning/paper/Transformer/positional-encoding/)  
+3. [jalammar 블로그](https://jalammar.github.io/illustrated-transformer/)  
