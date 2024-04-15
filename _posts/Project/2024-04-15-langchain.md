@@ -1,5 +1,5 @@
 ---
-title: "랭체인으로 PDF 문서를 읽는 LLM 만들기"
+title: "랭체인으로 PDF 문서를 읽고 대화내용을 기억하는 LLM 만들기"
 categories: Project
 toc: true
 toc_sticky: true
