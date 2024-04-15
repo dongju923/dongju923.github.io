@@ -55,7 +55,7 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Torch" %}
-                        <li><a href="/categories/Torch" class="">파이토치({{category[1].size}})</a></li>
+                        <li><a href="/categories/torch" class="">파이토치({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
