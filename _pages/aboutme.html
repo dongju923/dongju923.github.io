@@ -1,0 +1,617 @@
+---
+permalink: /aboutme/
+title: "자기소개"
+toc: true
+toc_sticky: true
+---
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동적 자기소개서</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .animate-fadeIn {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        .animate-delay-100 { animation-delay: 0.1s; }
+        .animate-delay-200 { animation-delay: 0.2s; }
+        .animate-delay-300 { animation-delay: 0.3s; }
+        .animate-delay-400 { animation-delay: 0.4s; }
+        .animate-delay-500 { animation-delay: 0.5s; }
+        
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+        
+        .card-hover-effect {
+            transition: all 0.3s ease;
+            transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1);
+        }
+        
+        .card-hover-effect:hover {
+            transform: perspective(1000px) rotateX(5deg) rotateY(5deg) scale(1.05);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+        
+        .progress-bar {
+            transition: width 1.5s ease;
+        }
+        
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .text-stroke {
+            -webkit-text-stroke: 1px white;
+            color: transparent;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -25px;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background-color: #3b82f6;
+        }
+        
+        .timeline-item:first-child::before {
+            top: 20px;
+        }
+        
+        .timeline-item:last-child::before {
+            height: 20px;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-100 text-gray-800 overflow-x-hidden">
+    <!-- 메인 헤더 섹션 -->
+    <header class="gradient-bg text-white min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        
+        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+            <div class="animate-fadeIn animate-delay-100">
+                <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-white float-animation mb-6">
+                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnoIjoiZ2QiOiJhIiwicm9sZjoiYXJ0aXN0Iiwic3JjIjoiaHR0cHM6Ly9pbWdzLnVuc3BsYXNoLmNvbS9waG90by0xNTM1NzEzODc1MDAtMTViYTYyOGI0ODA0P2l4bGliPXJiLTQuMC4zJnhsaWQ9TW5Iam9HZDNidjB3YzNOamNoc3lNVEV3YzJWeGRITXdNdyZ3PTEwMDAmaD03NTAmZm10PWpwZWcifQ" 
+                         alt="프로필 사진" class="w-full h-full object-cover">
+                </div>
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-fadeIn animate-delay-200">
+                <span class="text-stroke block md:inline">안녕하세요,</span> 
+                <span class="block md:inline">김개발 입니다</span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl mb-8 animate-fadeIn animate-delay-300">
+                열정과 창의력으로 무장한 <span class="font-bold text-yellow-300">프론트엔드 개발자</span>
+            </p>
+            
+            <div class="animate-fadeIn animate-delay-500 flex justify-center space-x-4">
+                <a href="#about" class="px-6 py-3 bg-white text-blue-600 font-semibold rounded-full hover:bg-gray-200 transition duration-300 transform hover:scale-105 inline-block">더 알아보기</a>
+                <a href="#contact" class="px-6 py-3 border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-blue-600 transition duration-300 transform hover:scale-105 inline-block">연락하기</a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#about" class="text-white text-4xl">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- 자기 소개 섹션 -->
+    <section id="about" class="py-20 px-6 bg-white">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center relative">
+                <span class="relative inline-block">
+                    저를 소개합니다
+                    <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-blue-500"></span>
+                </span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold">저에 대해서</h3>
+                    <p class="text-lg leading-relaxed">
+                        안녕하세요! 5년차 프론트엔드 개발자 김개발입니다. 사용자 중심의 디자인과 깔끔한 코드 작성에 열정을 가지고 있으며, 항상 새로운 기술을 배우고 적용하는 것을 즐깁니다.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        다양한 프로젝트 경험을 통해 문제 해결 능력과 팀 협업 능력을 키웠으며, 빠르게 변화하는 웹 환경에 적응하는 것을 즐깁니다. 코드의 아름다움과 기능성이 조화를 이룰 때 가장 큰 즐거움을 느낍니다.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mt-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                                <i class="fas fa-calendar-check text-blue-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">5년 이상</h4>
+                                <p class="text-sm text-gray-600">경력</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mr-3">
+                                <i class="fas fa-project-diagram text-purple-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">50+</h4>
+                                <p class="text-sm text-gray-600">프로젝트</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                                <i class="fas fa-graduation-cap text-green-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">컴퓨터공학</h4>
+                                <p class="text-sm text-gray-600">전공</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-yellow-100 flex items-center justify-center mr-3">
+                                <i class="fas fa-globe-asia text-yellow-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">영어, 일본어</h4>
+                                <p class="text-sm text-gray-600">언어</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="bg-blue-500 p-8 rounded-lg shadow-xl h-full card-hover-effect">
+                        <h3 class="text-2xl font-bold text-white mb-6">기술 스택</h3>
+                        
+                        <div class="space-y-5">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-white font-medium">HTML/CSS</span>
+                                    <span class="text-white">95%</span>
+                                </div>
+                                <div class="w-full bg-white bg-opacity-30 rounded-full h-3">
+                                    <div class="progress-bar bg-white h-3 rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-white font-medium">JavaScript</span>
+                                    <span class="text-white">90%</span>
+                                </div>
+                                <div class="w-full bg-white bg-opacity-30 rounded-full h-3">
+                                    <div class="progress-bar bg-white h-3 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-white font-medium">React</span>
+                                    <span class="text-white">85%</span>
+                                </div>
+                                <div class="w-full bg-white bg-opacity-30 rounded-full h-3">
+                                    <div class="progress-bar bg-white h-3 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-white font-medium">Node.js</span>
+                                    <span class="text-white">75%</span>
+                                </div>
+                                <div class="w-full bg-white bg-opacity-30 rounded-full h-3">
+                                    <div class="progress-bar bg-white h-3 rounded-full" style="width: 75%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8 flex flex-wrap gap-3">
+                            <span class="px-3 py-1 bg-white bg-opacity-20 text-white rounded-full text-sm">TailwindCSS</span>
+                            <span class="px-3 py-1 bg-white bg-opacity-20 text-white rounded-full text-sm">TypeScript</span>
+                            <span class="px-3 py-1 bg-white bg-opacity-20 text-white rounded-full text-sm">Git</span>
+                            <span class="px-3 py-1 bg-white bg-opacity-20 text-white rounded-full text-sm">Figma</span>
+                            <span class="px-3 py-1 bg-white bg-opacity-20 text-white rounded-full text-sm">Redux</span>
+                            <span class="px-3 py-1 bg-white bg-opacity-20 text-white rounded-full text-sm">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 경력/학력 타임라인 섹션 -->
+    <section class="py-20 px-6 bg-gray-50">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center relative">
+                <span class="relative inline-block">
+                    경력 & 학력
+                    <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-blue-500"></span>
+                </span>
+            </h2>
+            
+            <div class="relative pl-8">
+                <!-- 경력 아이템 -->
+                <div class="timeline-item relative mb-10 pb-6 pl-8 border-b border-gray-200">
+                    <div class="absolute -left-10 top-1 w-6 h-6 rounded-full bg-blue-500 border-4 border-white flex items-center justify-center">
+                        <i class="fas fa-briefcase text-white text-xs"></i>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">현재</span>
+                        <h3 class="text-xl font-bold mt-2 mb-1">선두기술, 프론트엔드 개발자</h3>
+                        <span class="text-gray-600">2021.01 - 현재</span>
+                        <p class="mt-3 text-gray-700">
+                            주요 클라이언트 웹 애플리케이션 개발을 담당하며, React와 TypeScript를 사용하여 고성능 애플리케이션을 구현했습니다. 팀 리더로서 4명의 주니어 개발자를 멘토링했습니다.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- 경력 아이템 -->
+                <div class="timeline-item relative mb-10 pb-6 pl-8 border-b border-gray-200">
+                    <div class="absolute -left-10 top-1 w-6 h-6 rounded-full bg-blue-500 border-4 border-white flex items-center justify-center">
+                        <i class="fas fa-briefcase text-white text-xs"></i>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <h3 class="text-xl font-bold mt-2 mb-1">웹튼, 프론트엔드 개발자</h3>
+                        <span class="text-gray-600">2019.07 - 2020.12</span>
+                        <p class="mt-3 text-gray-700">
+                            Vue.js를 사용한 다양한 웹 애플리케이션 개발에 참여했습니다. API 통합 최적화를 통해 페이지 로딩 속도를 40% 개선하는 데 기여했습니다.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- 학력 아이템 -->
+                <div class="timeline-item relative mb-10 pb-6 pl-8">
+                    <div class="absolute -left-10 top-1 w-6 h-6 rounded-full bg-green-500 border-4 border-white flex items-center justify-center">
+                        <i class="fas fa-graduation-cap text-white text-xs"></i>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <h3 class="text-xl font-bold mt-2 mb-1">서울대학교, 컴퓨터공학과</h3>
+                        <span class="text-gray-600">2015.03 - 2019.02</span>
+                        <p class="mt-3 text-gray-700">
+                            컴퓨터공학 학사 학위를 취득했습니다. 웹 기술 개발 동아리에서 활동하며 여러 웹 프로젝트를 진행했습니다. 학점 4.0/4.5로 우수한 성적으로 졸업했습니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 프로젝트 섹션 -->
+    <section class="py-20 px-6 bg-white">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center relative">
+                <span class="relative inline-block">
+                    대표 프로젝트
+                    <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-blue-500"></span>
+                </span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- 프로젝트 카드 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-2 card-hover-effect">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=MnoIjoiZ2QiOiJhIiwicm9sZjoiYXJ0aXN0Iiwic3JjIjoiaHR0cHM6Ly9pbWdzLnVuc3BsYXNoLmNvbS9waG90by0xNTQ3NjU4NzE5LWQxMmc1MjQyMWRkYT9peGxpYj1yYi00LjAuM3hsaWQ9TW5Iam9HZDNidjB3YzNOamNoc3lNVEV3YzJWeGRITXdNdyZ3PTEwMDAmaD02NjcmZm10PWpwZWcifQ" 
+                             alt="프로젝트 이미지" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-bold">e-커머스 플랫폼 리뉴얼</h3>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">2023</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            React와 Next.js를 사용한 대규모 e-커머스 플랫폼의 프론트엔드 전면 개편 프로젝트를 주도했습니다.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">React</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Next.js</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">Redux</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 프로젝트 카드 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-2 card-hover-effect">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnoIjoiZ2QiOiJhIiwicm9sZjoiYXJ0aXN0Iiwic3JjIjoiaHR0cHM6Ly9pbWdzLnVuc3BsYXNoLmNvbS9waG90by0xNTUxMjg4MDQ5LWJlYmRhNGUzOGY3MT9peGxpYj1yYi00LjAuM3hsaWQ9TW5Iam9HZDNidjB3YzNOamNoc3lNVEV3YzJWeGRITXdNdyZ3PTEwMDAmaD02NjcmZm10PWpwZWcifQ" 
+                             alt="프로젝트 이미지" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-bold">실시간 데이터 시각화 대시보드</h3>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">2022</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            WebSocket을 활용한 실시간 데이터 시각화 대시보드를 개발했습니다. D3.js와 Chart.js를 활용한 다양한 차트 구현.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm">TypeScript</span>
+                            <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm">D3.js</span>
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm">Chart.js</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 더 많은 프로젝트 표시 버튼 -->
+                <div class="md:col-span-2 flex justify-center mt-6">
+                    <button id="showMoreBtn" class="px-8 py-3 bg-transparent border-2 border-blue-500 text-blue-500 font-semibold rounded-full hover:bg-blue-500 hover:text-white transition duration-300 transform hover:scale-105">
+                        더 많은 프로젝트 보기
+                    </button>
+                </div>
+                
+                <!-- 추가 프로젝트 (처음에는 숨겨짐) -->
+                <div id="moreProjects" class="md:col-span-2 grid md:grid-cols-2 gap-8 hidden">
+                    <!-- 프로젝트 카드 3 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-2 card-hover-effect">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=MnoIjoiZ2QiOiJhIiwicm9sZjoiYXJ0aXN0Iiwic3JjIjoiaHR0cHM6Ly9pbWdzLnVuc3BsYXNoLmNvbS9waG90by0xNTU5MDI4MDEyLTQ4MWMwOGE3MGZmYTE/aXhsaWI9cmItNC4wLjN4bGlkPU1uSGpvR2QzYnYwd2MzTmpjaHN5TVRFd2MyVnhkSE13TXcmdz0xMDAwJmg9NjY3JmZtdD1qcGVnIn0" 
+                                 alt="프로젝트 이미지" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="text-xl font-bold">모바일 헬스케어 앱</h3>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">2021</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">
+                                React Native로 개발된 헬스케어 모바일 애플리케이션. 사용자의 건강 데이터를 분석하고 맞춤형 솔루션을 제공합니다.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">React Native</span>
+                                <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">Firebase</span>
+                                <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">HealthKit</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 프로젝트 카드 4 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-2 card-hover-effect">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?ixlib=rb-4.0.3&ixid=MnoIjoiZ2QiOiJhIiwicm9sZjoiYXJ0aXN0Iiwic3JjIjoiaHR0cHM6Ly9pbWdzLnVuc3BsYXNoLmNvbS9waG90by0xNTI2OTQ3NDI1OTYwLTkyYzVjYzRiNjIwZT9peGxpYj1yYi00LjAuM3hsaWQ9TW5Iam9HZDNidjB3YzNOamNoc3lNVEV3YzJWeGRITXdNdyZ3PTEwMDAmaD02NjcmZm10PWpwZWcifQ" 
+                                 alt="프로젝트 이미지" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="text-xl font-bold">UI 컴포넌트 라이브러리</h3>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">2020</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">
+                                회사 내부에서 사용할 재사용 가능한 UI 컴포넌트 라이브러리를 개발했습니다. Storybook 기반으로 문서화 완료.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">React</span>
+                                <span class="px-3 py-1 bg-pink-100 text-pink-800 rounded-full text-sm">Storybook</span>
+                                <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Styled-components</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 연락처 섹션 -->
+    <section id="contact" class="py-20 px-6 bg-gray-900 text-white">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center relative">
+                <span class="relative inline-block">
+                    연락하기
+                    <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-blue-400"></span>
+                </span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">연락처 정보</h3>
+                    <p class="mb-8 opacity-80">
+                        새로운 기회와 도전을 항상 환영합니다. 궁금한 점이나 제안이 있으시면 언제든지 연락주세요!
+                    </p>
+                    
+                    <div class="space-y-5">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-blue-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">이메일</h4>
+                                <a href="mailto:kimdev@example.com" class="text-blue-400 hover:text-blue-300 transition">kimdev@example.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center mr-4">
+                                <i class="fas fa-phone-alt text-blue-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">전화번호</h4>
+                                <a href="tel:+821012345678" class="text-blue-400 hover:text-blue-300 transition">010-1234-5678</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center mr-4">
+                                <i class="fab fa-github text-blue-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">GitHub</h4>
+                                <a href="https://github.com/kimdev" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 transition">github.com/kimdev</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center mr-4">
+                                <i class="fab fa-linkedin-in text-blue-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">LinkedIn</h4>
+                                <a href="https://linkedin.com/in/kimdev" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 transition">linkedin.com/in/kimdev</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <form class="space-y-5">
+                        <div>
+                            <label for="name" class="block mb-1 font-medium">이름</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block mb-1 font-medium">이메일</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block mb-1 font-medium">제목</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block mb-1 font-medium">메시지</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full px-6 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition duration-300 transform hover:scale-[1.02]">
+                            메시지 보내기
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="py-12 px-6 bg-gray-900 bg-opacity-90 text-gray-400 text-center">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                    <i class="fab fa-github text-2xl"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                    <i class="fab fa-linkedin-in text-2xl"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                    <i class="fab fa-twitter text-2xl"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                    <i class="fab fa-medium text-2xl"></i>
+                </a>
+            </div>
+            
+            <p class="mb-4">
+                © 2023 김개발. All rights reserved.
+            </p>
+            
+            <p>
+                Designed with <i class="fas fa-heart text-red-500"></i> by 김개발
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // 페이지 로드 시 애니메이션 효과 적용
+        document.addEventListener('DOMContentLoaded', function() {
+            // 스크롤 이벤트로 섹션 나타나기
+            const sections = document.querySelectorAll('section');
+            
+            const observerOptions = {
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fadeIn');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+            
+            // 더 많은 프로젝트 보기 버튼
+            const showMoreBtn = document.getElementById('showMoreBtn');
+            const moreProjects = document.getElementById('moreProjects');
+            
+            showMoreBtn.addEventListener('click', function() {
+                if (moreProjects.classList.contains('hidden')) {
+                    moreProjects.classList.remove('hidden');
+                    moreProjects.classList.add('grid');
+                    showMoreBtn.textContent = '프로젝트 숨기기';
+                } else {
+                    moreProjects.classList.add('hidden');
+                    moreProjects.classList.remove('grid');
+                    showMoreBtn.textContent = '더 많은 프로젝트 보기';
+                }
+            });
+            
+            // 스킬 프로그레스 바 애니메이션
+            setTimeout(() => {
+                document.querySelectorAll('.progress-bar').forEach(bar => {
+                    bar.classList.add('w-full');
+                    bar.style.width = ''; // 스타일 초기화
+                });
+            }, 300);
+            
+            // 스크롤 스무스 이동
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // 카드 호버 효과 강화
+            document.querySelectorAll('.card-hover-effect').forEach(card => {
+                card.addEventListener('mousemove', function(e) {
+                    const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+                    const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+                    card.style.transform = `perspective(1000px) rotateY(${xAxis}deg) rotateX(${yAxis}deg) scale(1.05)`;
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    card.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
