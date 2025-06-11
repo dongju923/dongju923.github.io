@@ -107,7 +107,7 @@ analytics:
 # Site Author
 author:
   name             : "안동주"
-  avatar           : "assets/images/my_image1.png"
+  avatar           : "assets/images/aboutme/my_image1.png"
   bio              : "적극적인 피드백 환영합니다..!"
   location         : "Republic of Korea"
   email            :
