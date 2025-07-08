@@ -15,6 +15,42 @@ toc_sticky: true
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        body {
+        margin: 0;
+        background-color: #000;
+        cursor: default;
+        }
+
+        .star {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: white;
+      clip-path: polygon(
+        50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 91%,
+        50% 70%,
+        21% 91%,
+        32% 57%,
+        2% 35%,
+        39% 35%
+      );
+      pointer-events: none;
+      z-index: 9999;
+      animation: fall 1s linear forwards;
+      transform: rotate(0deg);
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -95,6 +131,7 @@ toc_sticky: true
         .timeline-item:last-child::before {
             height: 20px;
         }
+        
     </style>
 </head>
 <body class="font-sans bg-gray-100 text-gray-800 overflow-x-hidden">
@@ -484,6 +521,7 @@ toc_sticky: true
                 
                 <div>
                     <form action="https://formsubmit.co/dongju0103664@gmail.com" method="POST" class="space-y-5">
+                        <input type="hidden" name="_redirect" value="https://dongju923.github.io/aboutme/">
                         <div>
                         <label for="name" class="block mb-1 font-medium">이름</label>
                         <input type="text" name="name" id="name" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
@@ -540,7 +578,6 @@ toc_sticky: true
             </p>
         </div>
     </footer>
-
     <script>
         // 페이지 로드 시 애니메이션 효과 적용
         document.addEventListener('DOMContentLoaded', function() {
@@ -612,7 +649,41 @@ toc_sticky: true
                 });
             });
         });
+
+        function getRandomColor() {
+        const colors = [
+            '#FFD700', // gold
+            '#FF69B4', // hotpink
+            '#87CEFA', // light blue
+            '#ADFF2F', // greenyellow
+            '#FFB6C1', // light pink
+            '#FFFFFF', // white
+            '#00FFFF', // cyan
+        ];
+        return colors[Math.floor(Math.random() * colors.length)];
+        }
+        
+        document.addEventListener('mousemove', (e) => {
+            const star = document.createElement('div');
+            star.className = 'star';
+
+            const size = Math.random() * 4 + 6; // 크기 6~10px
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+
+            star.style.background = getRandomColor();
+            star.style.left = `${e.pageX}px`;
+            star.style.top = `${e.pageY}px`;
+
+            const rotate = Math.random() * 360;
+            star.style.transform = `rotate(${rotate}deg)`;
+
+            document.body.appendChild(star);
+
+            setTimeout(() => {
+                star.remove();
+            }, 1000);
+        });
     </script>
 </body>
 </html>
-
