@@ -58,7 +58,7 @@ toc_sticky: true
 - `lastActiveOrg` — 조직 ID
 - `chat_session` — 현재 대화 세션 ID
 
-![DevTools Network Headers](/assets/images/project_img/img.png)    
+![DevTools Network Headers](/assets/images/project_img/image.png)    
 
 URL 형식은 다음과 같습니다:
 
@@ -114,7 +114,7 @@ headers = {
 
 **Network → completion → Payload**에서 값을 확인하고 아래 코드를 상황에 맞게 수정합니다. `prompt`에는 Claude에게 보낼 질문을 입력합니다.
 
-![DevTools Payload](/assets/images/project_img/imgage2.png)
+![DevTools Payload](/assets/images/project_img/image2.png)
 
 ```python
 payload = {
