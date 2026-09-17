@@ -21,36 +21,6 @@ toc_sticky: true
         cursor: default;
         }
 
-        .star {
-      position: absolute;
-      width: 6px;
-      height: 6px;
-      background: white;
-      clip-path: polygon(
-        50% 0%,
-        61% 35%,
-        98% 35%,
-        68% 57%,
-        79% 91%,
-        50% 70%,
-        21% 91%,
-        32% 57%,
-        2% 35%,
-        39% 35%
-      );
-      pointer-events: none;
-      z-index: 9999;
-      animation: fall 1s linear forwards;
-      transform: rotate(0deg);
-    }
-
-    @keyframes fall {
-      to {
-        transform: translateY(100px) rotate(360deg);
-        opacity: 0;
-      }
-    }
-
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -183,7 +153,7 @@ toc_sticky: true
                 <div class="space-y-6">
                     <h3 class="text-2xl font-bold">저에 대해서</h3>
                     <p class="text-lg leading-relaxed">
-                        안녕하세요! 3년차 AI 개발자 안동주입니다. 인공지능 모델 개발과 응용에 집중하며, 최신 기술을 바탕으로 현실 문제를 해결하는 데 열정을 가지고 있습니다.
+                        안녕하세요! AI 개발자 안동주입니다. 산업 현장에서 AI 개발자로 근무한 뒤, 현재는 충북대학교 소프트웨어학과 석사과정에서 인공지능 연구를 이어가고 있습니다. 인공지능 모델 개발과 응용에 집중하며, 최신 기술을 바탕으로 현실 문제를 해결하는 데 열정을 가지고 있습니다.
                     </p>
                     <p class="text-lg leading-relaxed">
                         다양한 프로젝트를 통해 문제 해결력과 팀워크를 키워왔으며, 빠르게 변화하는 기술 흐름에 맞춰 배우고 성장하는 과정을 즐깁니다. 
@@ -300,17 +270,31 @@ toc_sticky: true
             </h2>
             
             <div class="relative pl-8">
+                <!-- 학력 아이템 (현재) -->
+                <div class="timeline-item relative mb-10 pb-6 pl-8 border-b border-gray-200">
+                    <div class="absolute -left-10 top-1 w-6 h-6 rounded-full bg-green-500 border-4 border-white flex items-center justify-center">
+                        <i class="fas fa-graduation-cap text-white text-xs"></i>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">현재</span>
+                        <h3 class="text-xl font-bold mt-2 mb-1">충북대학교, 소프트웨어학과 석사과정</h3>
+                        <span class="text-gray-600">2026.03 - 현재</span>
+                        <p class="mt-3 text-gray-700">
+                            충북대학교 소프트웨어학과 석사과정에 재학 중입니다. 산업 현장에서의 AI 개발 경험을 바탕으로 인공지능 분야의 연구를 심화하고 있습니다.
+                        </p>
+                    </div>
+                </div>
+
                 <!-- 경력 아이템 -->
                 <div class="timeline-item relative mb-10 pb-6 pl-8 border-b border-gray-200">
                     <div class="absolute -left-10 top-1 w-6 h-6 rounded-full bg-blue-500 border-4 border-white flex items-center justify-center">
                         <i class="fas fa-briefcase text-white text-xs"></i>
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-                        <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">현재</span>
                         <h3 class="text-xl font-bold mt-2 mb-1">의료혁신, AI 개발자</h3>
-                        <span class="text-gray-600">2023.09 - 현재</span>
+                        <span class="text-gray-600">2023.09 - 2026.02</span>
                         <p class="mt-3 text-gray-700">
-                            국책과제 연구를 수행중이며 사용자 맞춤형 의료 통합 플랫폼을 구축하는 프로젝트의 핵심 AI 연구원으로 참여하고 있습니다. 챗봇, 음성인식 등 자체적인 AI 기술을 개발 및 연구하여 의료 현장에서 실질적인 사용성을 확보하는 데 주력하고 있습니다.
+                            국책과제 연구를 수행하며 사용자 맞춤형 의료 통합 플랫폼을 구축하는 프로젝트의 핵심 AI 연구원으로 참여했습니다. 챗봇, 음성인식 등 자체적인 AI 기술을 개발 및 연구하여 의료 현장에서 실질적인 사용성을 확보하는 데 주력했습니다.
                         </p>
                     </div>
                 </div>
@@ -361,8 +345,8 @@ toc_sticky: true
                 <!-- 프로젝트 카드 1 -->
                 <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-2 card-hover-effect">
                     <div class="h-48 overflow-hidden">
-                        <img src="/assets/images/aboutme/chatbot.png"
-                             alt="프로젝트 이미지" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                        <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&q=80"
+                             alt="의료 챗봇 프로젝트 이미지" class="w-full h-full object-cover transition duration-500 hover:scale-105">
                     </div>
                     <div class="p-6">
                         <div class="flex justify-between items-center mb-2">
@@ -411,6 +395,28 @@ toc_sticky: true
                 
                 <!-- 추가 프로젝트 (처음에는 숨겨짐) -->
                 <div id="moreProjects" class="md:col-span-2 grid md:grid-cols-2 gap-8 hidden">
+                    <!-- 프로젝트 카드: 주식 자동매매 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-2 card-hover-effect">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80"
+                                 alt="주식 매매 프로그램 이미지" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="text-xl font-bold">한국투자증권 API 기반 주식 매매 프로그램</h3>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">2025</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">
+                                한국투자증권 Open API(KIS Developers)를 활용한 주식 자동매매 프로그램. 실시간 시세 조회, 매매 전략에 따른 자동 주문 실행, 보유 종목 및 손익 관리 기능을 구현했습니다.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Python</span>
+                                <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">REST API</span>
+                                <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm">Auto Trading</span>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- 프로젝트 카드 3 -->
                     <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-2 card-hover-effect">
                         <div class="h-48 overflow-hidden">
@@ -650,40 +656,6 @@ toc_sticky: true
             });
         });
 
-        function getRandomColor() {
-        const colors = [
-            '#FFD700', // gold
-            '#FF69B4', // hotpink
-            '#87CEFA', // light blue
-            '#ADFF2F', // greenyellow
-            '#FFB6C1', // light pink
-            '#FFFFFF', // white
-            '#00FFFF', // cyan
-        ];
-        return colors[Math.floor(Math.random() * colors.length)];
-        }
-        
-        document.addEventListener('mousemove', (e) => {
-            const star = document.createElement('div');
-            star.className = 'star';
-
-            const size = Math.random() * 4 + 6; // 크기 6~10px
-            star.style.width = `${size}px`;
-            star.style.height = `${size}px`;
-
-            star.style.background = getRandomColor();
-            star.style.left = `${e.pageX}px`;
-            star.style.top = `${e.pageY}px`;
-
-            const rotate = Math.random() * 360;
-            star.style.transform = `rotate(${rotate}deg)`;
-
-            document.body.appendChild(star);
-
-            setTimeout(() => {
-                star.remove();
-            }, 1000);
-        });
     </script>
 </body>
 </html>
