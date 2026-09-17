@@ -18,11 +18,11 @@ use_math: true
 참고로 위 식을 계산하면 $2(x+y)$가 된다.
 
 # 역전파 구현
-![network](/assets/images/propagation/network.png)
+![network](/assets/images/DL/propagation/network.png)
 > 예제로 사용할 신경망의 구조는 전에 포스팅 했던 순전파 구조와 같다. 순전파와는 조금 다른 점은 역전파를 조금 더 쉽게 계산하기 위해 각 층마다 나온 결과값을 추가하고 편향 값은 삭제하였다.
 
-![network_back1](/assets/images/propagation/network_back1.png)  
-![net_cap1](/assets/images/propagation/net_back_cap1.png)
+![network_back1](/assets/images/DL/propagation/network_back1.png)  
+![net_cap1](/assets/images/DL/propagation/net_back_cap1.png)
 
 
 원래 $E$는 $1 \over n$ $\displaystyle\sum_{i=0}^{n}{(t_i-y_i)^2}$ 인데 여기서 $n=2$ (출력이 2개이기 때문)이고 $y[0]$ 에 대한 에러만 구하면 된다. 그럼 하나씩 구해보자. $z2[0]$ 에 대한 편미분이므로 $t_0$ 는 무시하고 계산한다.   
@@ -33,10 +33,10 @@ $\partial z2[0] \over \partial a2[0]$ = $z2[0] * (1 - z2[0])$ = $0.57 * (1-0.57)
 $\partial a2[0] \over \partial w2_{0,0}$ = $z1[0] + 0$ = $0.57$
 > $z1[0] + 0$ 에서 0 은 편향이 없으므로 0이다.
 
-![net_cap2](/assets/images/propagation/net_back_cap2.png)  
+![net_cap2](/assets/images/DL/propagation/net_back_cap2.png)  
 
-![network_back2](/assets/images/propagation/network_back2.png)  
-![net_cap3](/assets/images/propagation/net_back_cap3.png)  
+![network_back2](/assets/images/DL/propagation/network_back2.png)  
+![net_cap3](/assets/images/DL/propagation/net_back_cap3.png)  
 
 > LaTex 수식이 너무 복잡해서 틀린것이 있을수 있습니다. Mathjax 버전문제로 수식이 적용되지 않아 사진으로 대체합니다. 죄송합니다 ㅠ
 

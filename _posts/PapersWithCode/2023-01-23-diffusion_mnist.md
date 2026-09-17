@@ -156,7 +156,7 @@ plt.show()
 
 
     
-![png](/assets/images/diffusion_mnist/diffusion_mnist_15_2.png)
+![png](/assets/images/PapersWithCode/diffusion_mnist/diffusion_mnist_15_2.png)
     
 
 
@@ -674,8 +674,8 @@ plt.show()
 
 
     
-![png](/assets/images/diffusion_mnist/diffusion_mnist_31_1.png)  
-<img src="/assets/images/diffusion_mnist/ddpm.gif" width="25%" height="25%">
+![png](/assets/images/PapersWithCode/diffusion_mnist/diffusion_mnist_31_1.png)  
+<img src="/assets/images/PapersWithCode/diffusion_mnist/ddpm.gif" width="25%" height="25%">
 
 
 
@@ -733,8 +733,8 @@ plt.show()
 
 
     
-![png](/assets/images/diffusion_mnist/diffusion_mnist_34_1.png)  
-<img src="/assets/images/diffusion_mnist/ddim.gif" width="25%" height="25%">
+![png](/assets/images/PapersWithCode/diffusion_mnist/diffusion_mnist_34_1.png)  
+<img src="/assets/images/PapersWithCode/diffusion_mnist/ddim.gif" width="25%" height="25%">
 
 ### 오늘의 정리
 Mnist의 shape은 28x28 이미지 이지만 input으로 넣을 때 32x32로 넣는다. 왜 32x32로 들어가는지 모르겠다..다음번에는 DDPM에서 몇가지 문제점을 수정한 DDIM에 대해서 포스팅 해봐야겠다.

@@ -319,7 +319,7 @@ for idx, col in enumerate(x):
 
 
     
-![png](/assets/images/regression/mlr1.png)
+![png](/assets/images/ML/regression/mlr1.png)
     
 
 
@@ -360,7 +360,7 @@ for idx, col in enumerate(x):
 
 
     
-![png](/assets/images/regression/mlr2.png)
+![png](/assets/images/ML/regression/mlr2.png)
     
 
 

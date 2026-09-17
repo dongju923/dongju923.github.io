@@ -666,7 +666,7 @@ plt.show()
 
 
     
-![png](/assets/images/regression/rl_16_0.png)
+![png](/assets/images/ML/regression/rl_16_0.png)
     
 
 

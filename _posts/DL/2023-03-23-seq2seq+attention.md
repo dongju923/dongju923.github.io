@@ -96,7 +96,7 @@ plot_model(model)
 
 
 
-![png](/assets/images/NLP/attention_16_0.png)
+![png](/assets/images/DL/nlp/attention_16_0.png)
     
 
 

@@ -91,4 +91,4 @@ TypeError: get_file() missing 1 required positional argument: 'fname'
 python text2img.py --prompt="A epic and beautiful rococo werewolf drinking coffee, in a burning coffee shop. ultra-detailed. anime, pixiv, uhd 8k cryengine, octane render" --output="my_image.png"
 ```
 이렇게 키워드를 검색한 결과 이런 고퀄리티의 이미지를 생성해 주었다,,,ㄷㄷ  
-![image](/assets/images/my_image1.png)
+![image](/assets/images/DL/stable_diffusion/my_image1.png)

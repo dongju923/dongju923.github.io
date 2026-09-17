@@ -14,7 +14,7 @@ use_math: true
 seq2seq모델에 대해서 잠깐 복습해보자. 입력 시퀀스가 들어오면 인코더를 거쳐서 고정된 길이의 컨텍스트 벡터를 내보낸다.  
 이 벡터는 디코더로 들어가서 디코더에서 계산을 거쳐서 최종 출력 시퀀스를 내보낸다.  
 
-![png](/assets/images/NLP/attention_1.png)  
+![png](/assets/images/DL/nlp/attention_1.png)  
 
 
 하지만 seq2seq모델의 문제는 고정된 길이의 컨텍스트 벡터를 내보내기 때문에, 긴 시퀀스의 입력이 들어오게 되면 정보를 잘 압축하지 못한다.  
@@ -29,7 +29,7 @@ seq2seq모델에 대해서 잠깐 복습해보자. 입력 시퀀스가 들어오
 
 예를 들어보자면 출력 시퀀스의 단어인 '학생'의 은닉상태는 입력 시퀀스의 단어인 'student'의 은닉상태와 연관성이 깊다고 가정하는 것이다. 따라서 인코더가 '학생'이라는 단어를 입력받은 직후의 은닉상태에 조금더 '집중(Attention)' 하면, 조금 더 좋은 품질의 모델을 만들지 않을까?라는 생각에서 도출된 개념인 것이다.
 
-![png](/assets/images/NLP/attention_2.png)
+![png](/assets/images/DL/nlp/attention_2.png)
 
 위 그림은 인코더의 각 시점의 은닉상태를 하나로 합쳐놓은 것을 뜻한다. 물론 저 상태 그대로 디코더에 들어가는 것은 아니다. 디코더는 모여있는 저 값을 참고를 해서 계산을 하는 것이다.
 
@@ -44,7 +44,7 @@ seq2seq에 어텐션을 적용한 모델의 디코더는 다음과 같은 순서
 
 이렇게 하면 인코더의 마지막 은닉상태 뿐만 아니라 인코더의 매 시점 은닉상태들이 모두 디코더로 넘어가므로, 입력시퀀스 길이에 따른 손실되는 정보가 거의 없다. 또한 초기 시점의 인코더 은닉상태와 후반 시점의 인코더 은닉상태가 동등하게 확률의 형태로 전달되므로 기울기 소실/폭발 현상을 줄일 수 있다.
 
-![png](/assets/images/NLP/attention_3.png)
+![png](/assets/images/DL/nlp/attention_3.png)
 
 위 그림은 디코더의 마지막 LSTM에서 출력 단어를 예측할 때 어텐션 메커니즘을 사용하는 대략적인 예시이다.  
 마지막 LSTM의 히든상태와 매 시점 인코더의 은닉상태들 간의 유사도를 계산한다.  
@@ -58,7 +58,7 @@ seq2seq에 어텐션을 적용한 모델의 디코더는 다음과 같은 순서
 
 ### 과정1: Attention Score
 
-![png](/assets/images/NLP/attention_4.png)
+![png](/assets/images/DL/nlp/attention_4.png)
 
 <span style="color:violet">Attention Score는 디코더의 시점 $t$에서 새로운 단어를 예측하기 위해 디코더의 은닉상태 $s_t^T$와 인코더의 은닉상태 $h_1$~$h_t$들이 얼마나 유사한지를 계산하는 점수이다.</span>  
 위 그림은 디코더의 시점 t에서의 은닉상태인 $s_t$와 인코더의 은닉상태인 $h_t$의 Attention Score를 구하는 과정을 보여준다.  
@@ -68,14 +68,14 @@ $h_1 ... h_t$는 $t$ 시점에서 인코더의 은닉상태이고 $s_t^T$는 t�
 
 ### 과정2: Attention Distribution
 
-![png](/assets/images/NLP/attention_5.png)
+![png](/assets/images/DL/nlp/attention_5.png)
 
 위에서 얻는 Attention Score $e^t$에 softmax함수를 적용해서 모든 값의 합이 1이 되는 Attention Distribution을 얻는다.  
 수식으로는 $\alpha^t = softmax(e^t)$ 와 같이 나타낸다. softmax를 통해서 나온 값을 Attention Weight(어텐션 가중치)라고 한다. 즉, 학습과정에서 최적화 된다.
 
 ### 과정3: Attention Value
 
-![png](/assets/images/NLP/attention_6.png)
+![png](/assets/images/DL/nlp/attention_6.png)
 
 최종적으로 위에서 구한 Attention Weight와 인코더의 각 은닉상태를 가중합하여 최종적인 Attention Value $a_t$를 구한다.  
 식으로는 $a_t = \sum_{k=1}^{N} \alpha_i^t h_t$ 로 나타낼 수 있다.  
@@ -89,13 +89,13 @@ query 데이터베이스를 공부하면서 많이 들어봤을 것이다. 데�
 어텐션도 비슷한(?) 맥락이다. 어텐션에서의 query는 디코더의 은닉상태의 값을 요청한다고 생각하면 쉽다. key와 value는 인코더의 은닉상태를 뜻한다.  
 아래 그림을 한번 보자.
 
-<img src="/assets/images/NLP/attention_9.png" width="800" height="300">
+<img src="/assets/images/DL/nlp/attention_9.png" width="800" height="300">
 
 query와 각 key들 간의 유사도를 구한다. 그리고 softmax를 통해 확률분포로 변환하고 이 분포를 이용해 각 value들의 가중합을 구한다. 즉, 어텐션 메커니즘은 <span style="color:violet">주어진 query에 대해 어떤 value에 더 '집중'할지를 결정하는 것이다.</span>
 
 ### 최종단계
 
-![png](/assets/images/NLP/attention_7.png)
+![png](/assets/images/DL/nlp/attention_7.png)
 
 위에서 구한 Attention Value $a_t$를 디코더의 $t$시점의 은닉상태 $s_t$와 concat한다.  
 수식으로는 $v_t = [a_t;s_t]$ 로 정의한다. 이렇게 만들어진 벡터 $v_t$는 위에서 말한 보정된 컨텍스트 벡터이다.  
@@ -106,7 +106,7 @@ $v_t$는 디코더의 은닉상태의 정보 외에도 인코더에서 모든 �
 본 논문은 Attention 메커니즘이 처음 등장한 논문이다.  
 논문에서는 보정된 컨텍스트 벡터를 바로 출력층으로 보내지 않고 연산을 한번 더 추가하였다.  
 
-![png](/assets/images/NLP/attention_8.png)
+![png](/assets/images/DL/nlp/attention_8.png)
 
 가중치 행렬과 보정된 컨텍스트 벡터를 곱한후 하이퍼볼릭탄젠트 함수를 지나서 새로운 벡터 $\bar{s}_t$를 얻는다.  
 수식으로 표현하면 $\bar{s}_t$ = $tanh(W_c[a_t;s_t]+b_c)$로 정의된다.  

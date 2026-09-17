@@ -45,7 +45,7 @@ def MSE(y, t):
     return ((y-t)**2).mean(axis=None)
 ```
 > 예제로 사용하는 신경망의 구조
-![network](/assets/images/propagation/network.png)
+![network](/assets/images/DL/propagation/network.png)
 
 ```python
 # input 값

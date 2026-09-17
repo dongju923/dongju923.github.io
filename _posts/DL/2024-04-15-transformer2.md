@@ -11,7 +11,7 @@ use_math: true
 지난 포스팅이 궁금한 사람은 [여기](https://dongju923.github.io/dl/transformer1/)를 참고하기 바란다.  
 
 ### Positional Encoding
-![img.png](/assets/images/transformer/pos_enc.png)
+![img.png](/assets/images/DL/transformer/pos_enc.png)
 ```python
 class PositionalEncoding(tf.keras.layers.Layer):
     def __init__(self, position, d_model):
@@ -54,7 +54,7 @@ class PositionalEncoding(tf.keras.layers.Layer):
 
 
 ### scaled Dot-Product Attention
-![img_1.png](/assets/images/transformer/sdp.png)
+![img_1.png](/assets/images/DL/transformer/sdp.png)
 ```python
 def scaled_dot_product_attention(query, key, value, mask):
     # 1
@@ -139,7 +139,7 @@ class MultiHeadAttention(tf.keras.layers.Layer):
     
         return outputs
 ```  
-![img_2.png](/assets/images/transformer/mha.png)
+![img_2.png](/assets/images/DL/transformer/mha.png)
 1. `__init__()`
 - `tf.keras.layers.Layer`를 가져와 사용
 - q, k, v에 해당하는 가중치 행렬 정의
@@ -184,7 +184,7 @@ def encoder_layer(dff, d_model, num_heads, dropout, name="encoder_layer"):
     
     return tf.keras.Model(inputs=[inputs, padding_mask], outputs=outputs, name=name)
 ```
-![img_3.png](/assets/images/transformer/tf_enc.png)
+![img_3.png](/assets/images/DL/transformer/tf_enc.png)
 Encoder의 Multi-head attention의 q, k, v는 모두 input으로 출처가 같다.  
 input과 attention을 통해 나온 값을 더하는 Residual connection을 적용하고 Normalize한다. 사진에서 Add&Norm이 이 부분이다.  
 그 다음 Position-wise FFNN을 통과해서 나온 output과 첫번 째 Residual connection한 값과 또 Residual connection을 해서 최종 출력 디코더로 보낸다.

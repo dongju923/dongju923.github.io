@@ -60,7 +60,7 @@ plt.show()
 
 
     
-![png](/assets/images/CNN/post1_5_1.png)
+![png](/assets/images/DL/cnn/post1_5_1.png)
     
 
 
@@ -103,7 +103,7 @@ plt.show()
 
 
     
-![png](/assets/images/CNN/post1_8_1.png)
+![png](/assets/images/DL/cnn/post1_8_1.png)
     
 
 
@@ -148,7 +148,7 @@ plt.show()
 
 
     
-![png](/assets/images/CNN/post1_11_1.png)
+![png](/assets/images/DL/cnn/post1_11_1.png)
     
 
 

@@ -29,7 +29,7 @@ x_train = x_train.reshape(-1,784)
 x_test = x_test.reshape(-1,784)
 ```
 
-<img src="/assets/images/VAEcode/output.png" width="300" height="150">  
+<img src="/assets/images/PapersWithCode/vae_code/output.png" width="300" height="150">  
 
 ```python
 input_shape = (784,)
@@ -42,7 +42,7 @@ log_var = layers.Dense(latent)(encoding)
 ```
 > 사진과 같이 인코더를 통과하면 $\mu$ 와 $\sigma$ 를 output으로 내는 과정이다. $\mu$ 와 $\sigma$ 를 구하는 과정에서 같은 값이 들어가면 $\mu$ 와 $\sigma$의 값이 같게 나오지 않을 까? 라는 생각이 들었는데 다른 Dense layer이고 레이어가 호출될 때, 가중치와 편차는 랜덤으로 초기화 되기 때문에 결국 다른 값이 나온다!
 
-<img src="/assets/images/VAEcode/sampling2.png" width="300" height="150">  
+<img src="/assets/images/PapersWithCode/vae_code/sampling2.png" width="300" height="150">  
 
 ```python
 
@@ -135,7 +135,7 @@ plt.show()
 ```
 
 
-![png](/assets/images/VAEcode/output_9_0.png)  
+![png](/assets/images/PapersWithCode/vae_code/output_9_0.png)  
     
 
 # 오늘의 정리
