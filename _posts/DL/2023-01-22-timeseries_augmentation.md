@@ -37,7 +37,7 @@ plot(X, Y);
 
 
     
-![png](/assets/images/timeseries_augmentation/post_5_0.png)
+![png](/assets/images/DL/timeseries_augmentation/post_5_0.png)
     
 
 
@@ -54,7 +54,7 @@ plot(X_aug, Y_aug);
 
 
     
-![png](/assets/images/timeseries_augmentation/post_7_0.png)
+![png](/assets/images/DL/timeseries_augmentation/post_7_0.png)
     
 
 
@@ -70,7 +70,7 @@ plot(X_aug, Y_aug);
 
 
     
-![png](/assets/images/timeseries_augmentation/post_9_0.png)
+![png](/assets/images/DL/timeseries_augmentation/post_9_0.png)
     
 
 
@@ -86,7 +86,7 @@ plot(X_aug, Y_aug);
 
 
     
-![png](/assets/images/timeseries_augmentation/post_11_0.png)
+![png](/assets/images/DL/timeseries_augmentation/post_11_0.png)
     
 
 
@@ -103,7 +103,7 @@ plot(X_aug, Y_aug);
 
 
     
-![png](/assets/images/timeseries_augmentation/post_13_0.png)
+![png](/assets/images/DL/timeseries_augmentation/post_13_0.png)
     
 
 
@@ -119,7 +119,7 @@ plot(X_aug, Y_aug);
 
 
     
-![png](/assets/images/timeseries_augmentation/post_15_0.png)
+![png](/assets/images/DL/timeseries_augmentation/post_15_0.png)
     
 
 
@@ -135,7 +135,7 @@ plot(X_aug, Y_aug);
 
 
     
-![png](/assets/images/timeseries_augmentation/post_17_0.png)
+![png](/assets/images/DL/timeseries_augmentation/post_17_0.png)
     
 
 
@@ -152,7 +152,7 @@ plot(X_aug, Y_aug);
 
 
     
-![png](/assets/images/timeseries_augmentation/post_19_0.png)
+![png](/assets/images/DL/timeseries_augmentation/post_19_0.png)
     
 
 
@@ -169,7 +169,7 @@ plot(X_aug, Y_aug);
 
 
     
-![png](/assets/images/timeseries_augmentation/post_21_0.png)
+![png](/assets/images/DL/timeseries_augmentation/post_21_0.png)
     
 
 
@@ -185,7 +185,7 @@ plot(X_aug, Y_aug);
 
 
     
-![png](/assets/images/timeseries_augmentation/post_23_0.png)
+![png](/assets/images/DL/timeseries_augmentation/post_23_0.png)
     
 
 
@@ -203,7 +203,7 @@ plot(X_aug, Y_aug);
 
 
     
-![png](/assets/images/timeseries_augmentation/post_25_0.png)
+![png](/assets/images/DL/timeseries_augmentation/post_25_0.png)
     
 
 
@@ -228,7 +228,7 @@ plot(X_aug, Y_aug);
 
 
     
-![png](/assets/images/timeseries_augmentation/post_28_0.png)
+![png](/assets/images/DL/timeseries_augmentation/post_28_0.png)
     
 
 

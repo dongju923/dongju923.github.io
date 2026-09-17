@@ -33,7 +33,7 @@ plt.show()
 
 
     
-![png](/assets/images/regression/slr1.png)
+![png](/assets/images/ML/regression/slr1.png)
     
 
 
@@ -116,7 +116,7 @@ plt.show()
 
 
     
-![png](/assets/images/regression/slr2.png)
+![png](/assets/images/ML/regression/slr2.png)
     
 
 
@@ -172,7 +172,7 @@ plt.show()
 
 
     
-![png](/assets/images/regression/slr3.png)
+![png](/assets/images/ML/regression/slr3.png)
     
 
 

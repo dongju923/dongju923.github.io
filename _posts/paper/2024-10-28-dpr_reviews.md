@@ -40,7 +40,7 @@ q와 p는 각각의 인코더에 의해 동일한 dense vector space으로 변�
 
 ## 손실함수
 1. 유사도를 계산할 때 Dot product와 NLL(Nagative Log Likelihood)에 더불어, L2와 triplet loss에 대해서 실험을 진행하였지만,  
-![img_2.png](/assets/images/dpr/img_2.png)  
+![img_2.png](/assets/images/paper/dpr/img_2.png)  
 위와 같은 이유로 Dot product와 NLL을 사용함.
 2. 사용한 데이터셋에는 question 1개와 1개의 positive passage, n개의 nagative passage로 구성됨.
 실제 데이터셋을 이렇게 구성한 것이 아니고 이런 형식으로 학습에 사용되는데, 자세한 내용은 아래에서 설명한다.  
@@ -60,7 +60,7 @@ $D = {\{q_i, p_i^+, p_{i,1}^-, ... ,p_{i,n}^-\}_{i=1}^n}$
 실제 데이터셋을 구성할 때, negative passage는 수집하지 않고 배치 내에서 nagative passage를 사용하는 방식을 고안함.  
 미니배치 내 N개의 question이 있고, 각 question에는 하나의 positive passage가 있으니까 미니 배치 내에서 자신과 매핑되는 positive passage를 제외한 나머지 positive passage를
 nagative passage로 간주하여 학습한다.
-![img_3.png](/assets/images/dpr/img_3.png)
+![img_3.png](/assets/images/paper/dpr/img_3.png)
 
 
 # Training
@@ -77,5 +77,5 @@ BM25 + DPR은 new ranking function을 활용하여 linear combination을 진행�
 다음의 식을 이용하여 top-k 개의 최종 passage를 선택하였다.  
 $BM25(q,p) + \lambda * sim(q,p)$
 >결과
-> ![img_4.png](/assets/images/dpr/img_4.png)
-> ![img_1.png](/assets/images/dpr/img_1.png)
+> ![img_4.png](/assets/images/paper/dpr/img_4.png)
+> ![img_1.png](/assets/images/paper/dpr/img_1.png)

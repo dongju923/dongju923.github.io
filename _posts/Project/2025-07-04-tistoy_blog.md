@@ -20,7 +20,7 @@ tistory 블로그 작성페이지에서 `F12`를 눌러서 `개발자도구`를 
 아무 글이나 작성하고 포스팅을 누르게 되면 `Network` 탭에 `post.json` 이라는 요청이 뜨는걸 볼 수 있다.  
 이 POST 요청은 이제 우리가 글을 쓰고 포스팅을 누르게 되면 tistory서버에 post요청을 보내서 내가 쓴글좀 게시해줘 라고 말하는 것과 같다.  
 이제 이걸 참고해서 코드를 작성하면 된다!  
-![img.png](/assets/images/tis_blog/img2.png)  
+![img.png](/assets/images/Project/tistory_blog/img2.png)  
 
 
 ### header와 payload
@@ -149,7 +149,7 @@ selenium을 사용해서 tistory에 로그인을 하고 get_cookies()를 사용�
 크롬(자동로그인 및 쿠키 저장 등등)이라고 생각하면 된다. 그래도 처음 한번 인증은 필요한듯 하다...
 
 ### 결과
-![img.png](/assets/images/tis_blog/img3.png) 
+![img.png](/assets/images/Project/tistory_blog/img3.png) 
 성공적으로 포스팅 된것을 알 수 있다!
 
 

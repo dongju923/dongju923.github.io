@@ -177,7 +177,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-![png](/assets/images/Anomaly_detection_AE/output_4.png)  
+![png](/assets/images/DL/anomaly_detection_ae/output_4.png)  
 
 
 ```python
@@ -233,7 +233,7 @@ plt.legend()
 plt.xlabel('Epoch'); plt.ylabel('loss')
 plt.show()
 ```
-![png](/assets/images/Anomaly_detection_AE/output_13_0.png)  
+![png](/assets/images/DL/anomaly_detection_ae/output_13_0.png)  
 
 
 ```python
@@ -247,7 +247,7 @@ plt.fill_between(np.arange(140), decoded_imgs[0], normal_test_data[0], color='li
 plt.legend(labels=["Input", "Reconstruction", "Error"])
 plt.show()
 ```
-![png](/assets/images/Anomaly_detection_AE/output_14_0.png)  
+![png](/assets/images/DL/anomaly_detection_ae/output_14_0.png)  
 
 
 ```python
@@ -262,7 +262,7 @@ plt.legend(labels=["Input", "Reconstruction", "Error"])
 plt.show()
 ```
 
-![png](/assets/images/Anomaly_detection_AE/output_15_0.png)  
+![png](/assets/images/DL/anomaly_detection_ae/output_15_0.png)  
 
 
 ```python
@@ -313,7 +313,7 @@ plt.ylabel("Reconstruction error")
 plt.xlabel("Data point index")
 plt.show()
 ```
-![png](/assets/images/Anomaly_detection_AE/output_19_0.png)  
+![png](/assets/images/DL/anomaly_detection_ae/output_19_0.png)  
 > 임계값을 기준으로 비정상 데이터는 값이 큰 것을 알수있다.
 
 
@@ -330,7 +330,7 @@ plt.show()
 y_test = test_labels.astype('int')
 ```
 
-![png](/assets/images/Anomaly_detection_AE/output_20_0.png)  
+![png](/assets/images/DL/anomaly_detection_ae/output_20_0.png)  
 
 
 ```python

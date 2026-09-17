@@ -166,7 +166,7 @@ plt.show()
 
 
     
-![png](/assets/images/Project/post2_10_0.png)
+![png](/assets/images/Project/cnn_project/post2_10_0.png)
     
 
 
@@ -391,7 +391,7 @@ plt.show()
 
 
     
-![png](/assets/images/Project/post2_27_0.png)
+![png](/assets/images/Project/cnn_project/post2_27_0.png)
     
 
 
@@ -425,4 +425,4 @@ plt.show()
 
 
     
-![png](/assets/images/Project/post2_28_0.png)
+![png](/assets/images/Project/cnn_project/post2_28_0.png)

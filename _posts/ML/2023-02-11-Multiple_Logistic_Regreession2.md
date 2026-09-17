@@ -65,7 +65,7 @@ pairplot은 각 그리드의 변수간의 관계를 나타내는 그래프를 �
 iris_df.boxplot(figsize=(8, 4));
 ```
 
-![png](/assets/images/regression/test_6_0.png)
+![png](/assets/images/ML/regression/test_6_0.png)
     
 
 
@@ -74,7 +74,7 @@ iris_df.boxplot(figsize=(8, 4));
 iris_df.plot(figsize=(8, 4));
 ```
 
-![png](/assets/images/regression/test_7_0.png)
+![png](/assets/images/ML/regression/test_7_0.png)
     
 
 
@@ -83,7 +83,7 @@ iris_df.plot(figsize=(8, 4));
 sns.pairplot(iris_df, hue='species');
 ```
 
-![png](/assets/images/regression/test_8_0.png)
+![png](/assets/images/ML/regression/test_8_0.png)
     
 
 

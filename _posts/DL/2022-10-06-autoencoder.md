@@ -6,7 +6,7 @@ categories: DL
 # 오토인코더(Autoencoder)란?
 
 입력층, 은닉층, 출력층으로 구성되어 있으며 단순하게 말하자면 입력을 출력으로 복사하는 방법을 배우는 신경망이다. 하지만 입력을 출력으로 바로 복사하면 신경망의 의미가 없기 때문에 은닉층의 크기를 제한하거나, 잡음을 추가하는 등 단순히 입력을 출력으로 복사하지 못하게 제한하고, 학습을 통해 소실된 데이터를 복원하고 입력 데이터의 특징을 잘 표현한 새로운 출력이 나오게 하는 것이 목표이다. 오토인코더는 라벨이 필요없는 비지도 학습중 하나이고, 자기 자신을 정답으로 출력하기 때문에 자기지도 학습이라고도 한다.  
-![autoencoder](/assets/images/autoencoder/autoencoer_model.png)
+![autoencoder](/assets/images/DL/autoencoder/autoencoer_model.png)
 > 예제로 사용할 오토인코더 모델이다. 오토인코더의 종류는 매우 많지만 여기서는 가장 Basic한 Autoencoder모델을 사용하였다. Input -> hidden이 인코더부분, hidden -> output이 디코더 부분이다. 
 
 # 코드 구현
@@ -147,5 +147,5 @@ for i in range(1, n+1):
     ax.get_yaxis().set_visible(False)
 plt.show()
 ```
-![png](/assets/images/autoencoder/output_7_0.png)
+![png](/assets/images/DL/autoencoder/output_7_0.png)
 > 은닉층이 하나임에도 불구하고 꽤 괜찮은 결과를 볼 수 있다. 

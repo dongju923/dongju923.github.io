@@ -16,12 +16,12 @@ Logistic Regression는 이름에 'Regression'이 들어가지만 결론적으로
 
 선형회귀와 로지스틱회귀의 차이를 한번 보자.  
 </br>
-![png](/assets/images/regression/logreg01.png)  
+![png](/assets/images/ML/regression/logreg01.png)  
 </br>
 위의 사진은 일반적인 선형회귀이다. y값이 0(불합격), 1(합격)일때, 선이 $-\infin$ 부터 $+\infin$ 까지 이어진다. 이 말은 즉 확률이 0도 안되거나 100이 넘는다는 뜻이다.  
 이번에는 로지스틱 회귀모양을 보자  
 </br>
-![png](/assets/images/regression/logreg02.png)  
+![png](/assets/images/ML/regression/logreg02.png)  
 </br>
 위의 사진대로 선이 곡선모양을 띄면서 확률이 0과 1 사이의 값으로 그려지는 것을 볼 수 있다. 이 곡선모양을 $sigmoid$ 함수라고 불린다.  
 
@@ -43,7 +43,7 @@ logit을 계산하기 위해서 먼저 odds를 알아야 한다. odds란 어떤 
 로지스틱 회귀에서도 가중치와 편향이 적절한 값인지 확인하는 손실함수가 필요하다. 손실함수가 하는 일은 가중치와 편향의 값을 제어하면서 최적의 값을 찾는 역할을 한다.  
 로지스틱 회귀에서는 MSE Loss를 사용하지 않는다. 로지스틱 회귀에서는 선이 곡선 형태를 띄기 때문에 손실의 진짜 최소값이 아닌 가짜 최소값에 빠질 수도 있다.  
 </br>
-![jpg](/assets/images/regression/logreg_mse.jpg)  
+![jpg](/assets/images/ML/regression/logreg_mse.jpg)  
 </br>
 사진으로 보면 이해가 빠를것이다. 글로벌 미니멈이 진짜 최소값이고, 로컬 미니멈이 가짜 최소값이다. 따라서 새로운 손실함수가 필요하다.  
 
@@ -55,7 +55,7 @@ $\text{if } y=0 → \text{cost}\left( H(x), y \right) = -\log(1-H(x))$
 
 두 식을 그래프로 나타내보자.  
 </br>  
-![jpg](/assets/images/regression/logreg_loss.jpg)  
+![jpg](/assets/images/ML/regression/logreg_loss.jpg)  
 </br>  
 실제값 y가 1일 때는 파란색, 실제값 y가 0일때는 빨간색 선으로 표시했다.  
 실제값이 1일 때, 예측값인 $H(x)$의 값이 1이면 오차가 줄어든다. 반면에 실제값이 1일 때, 예측값의 값이 0이면 오차가 커진다. 따라서 로지스틱회귀의 손실함수는 $y=0$일때와 $y=1$일때 두개로 나눠진다. 결과적으로 로지스틱 회귀의 손실함수는  
@@ -91,7 +91,7 @@ $y=1$이면 $(1-y^i)log(1-H(x^i)$가 없어지므로 위에 식과 동일하다.
 로지스틱 회귀분석의 식은 $log(p / (1-p)) = wx + b$ 이렇게 나타내어 진다고 했었다.   
 위의 식에서 P에 대한 식으로 전개해보자. 수식을 쓰기 귀찮아서 사진으로 대체한다.. $wx + b$를 $Ax + b$라고 생각하면 된다.
 
-![png](/assets/images/regression/logit.png)  
+![png](/assets/images/ML/regression/logit.png)  
 
 수식을 보면 시그모이드 함수에 가중치를 곱하고 편향을 더한 값을 넣어준다.  
 결과적으로 <span style="color:violet">로지스틱 회귀 분석의 식은 그냥 선형회귀의 식에 sigmoid함수를 적용한 것과 같다.</span>  
