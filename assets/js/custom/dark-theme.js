@@ -1,3 +1,6 @@
+// Turbo는 페이지를 이동할 때마다 body의 스크립트를 다시 실행하므로,
+// 최상위 const/let 재선언 에러가 나지 않도록 함수로 감싼다.
+(() => {
 const defaultTheme = [...document.styleSheets].find(style => /(main.css)$/.test(style.href));
 const darkTheme = [...document.styleSheets].find(style => /(main_dark.css)$/.test(style.href));
 
@@ -29,3 +32,4 @@ if (darkTheme) {
 
     toggleThemeBtn.addEventListener('click', changeTheme)
 }
+})();

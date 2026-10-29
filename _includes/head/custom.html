@@ -5,3 +5,30 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
+
+<!-- 페이지 이동 시 본문만 교체(Turbo)해서 BGM이 끊기지 않게 함 -->
+<meta name="turbo-cache-control" content="no-cache">
+<script src="https://cdn.jsdelivr.net/npm/@hotwired/turbo@7.3.0/dist/turbo.es2017-umd.js"></script>
+<script src="{{ '/assets/js/custom/page-transition.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/custom/bgm.js' | relative_url }}"></script>
+<style>
+  .bgm-toggle {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 1000;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(40, 40, 40, 0.75);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+  .bgm-toggle:hover,
+  .bgm-toggle.is-playing { opacity: 1; }
+</style>
