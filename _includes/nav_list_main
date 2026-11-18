@@ -2,12 +2,7 @@
 
 {% assign sum = site.posts | size %}
 
-<!--카테고리 목록과 표시 이름은 _data/category_tree.yml에서 관리-->
-<style>
-  #category_tag_menu .nav__sub-items { margin: 0; padding-left: 0.9em; }
-  #category_tag_menu .nav__sub-items li { font-size: 0.9em; }
-  #category_tag_menu .nav__sub-items li::before { content: "└ "; opacity: 0.5; }
-</style>
+<!--카테고리 목록과 표시 이름은 _data/category_tree.yml에서 관리 (하위 카테고리 스타일은 head/custom.html)-->
 
 <nav class="nav__list">
   <input id="ac-toc" name="accordion-toc" type="checkbox" />
