@@ -5,6 +5,8 @@ toc_sticky: true
 use_math: true
 categories:
   - Paper
+  - LLM
+permalink: /paper/DeepSeek-MTP/
 ---
 
 > 논문: [DeepSeek-V3 Technical Report](https://arxiv.org/abs/2412.19437) Section 2.2  

@@ -3,7 +3,10 @@ title: "KAN:Kolmogorov-Arnold Networksv 논문 간단하게 이해하기"
 toc: true
 toc_sticky: true
 use_math: true
-categories: Paper
+categories:
+  - Paper
+  - Architecture
+permalink: /paper/kan_reviews/
 ---
 
 > 본 논문 중 수식적인 부분은 제외하고 최대한 제가 이해한 대로 작성하였습니다. 수식에 관련한 부분은 [논문](https://arxiv.org/pdf/2404.19756)을 참고해 주세요!

@@ -2,7 +2,10 @@
 title: "LSTM의 return_state와 return_sequences"
 toc: true
 toc_sticky: true
-categories: DL
+categories:
+  - DL
+  - Practice
+permalink: /dl/lstm_output/
 ---
 
 

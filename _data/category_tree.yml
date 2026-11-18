@@ -1,0 +1,61 @@
+# 사이드바, 카테고리 페이지, 글 하단 카테고리 표시에 쓰는 카테고리 목록.
+# key: 글 front matter의 categories 값 (새 글 URL에도 소문자로 들어감, 예: /paper/vla/글제목/)
+# name: 화면에 보이는 이름
+# 새 하위 카테고리를 만들 때는 여기에 추가하고 _pages/categories/ 에 페이지 파일을 하나 만든다.
+
+- key: Project
+  name: 프로젝트
+  url: /categories/project
+
+- key: DL
+  name: 딥러닝
+  url: /categories/dl
+  children:
+    - key: Theory
+      name: 이론
+      url: /categories/dl/theory
+    - key: NLP
+      name: 자연어처리
+      url: /categories/dl/nlp
+    - key: Practice
+      name: 실습
+      url: /categories/dl/practice
+
+- key: ML
+  name: 머신러닝
+  url: /categories/ml
+
+- key: Paper
+  name: 논문리뷰
+  url: /categories/paper
+  children:
+    - key: LLM
+      name: LLM·NLP
+      url: /categories/paper/llm
+    - key: Training
+      name: 학습 효율화
+      url: /categories/paper/training
+    - key: VLA
+      name: VLA
+      url: /categories/paper/vla
+    - key: Vision
+      name: Vision·생성모델
+      url: /categories/paper/vision
+    - key: TimeSeries
+      name: 시계열
+      url: /categories/paper/timeseries
+    - key: Architecture
+      name: 신경망 구조
+      url: /categories/paper/architecture
+
+- key: Papercode
+  name: 코드구현
+  url: /categories/papercode
+
+- key: Framework
+  name: TensorFlow·PyTorch
+  url: /categories/framework
+
+- key: Python
+  name: 파이썬 기초·심화
+  url: /categories/python

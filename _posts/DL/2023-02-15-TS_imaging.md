@@ -2,7 +2,10 @@
 title: "시계열 데이터를 이미지로 바꿔보자!"
 toc: true
 toc_sticky: true
-categories: DL
+categories:
+  - DL
+  - Practice
+permalink: /dl/TS_imaging/
 ---
 
 

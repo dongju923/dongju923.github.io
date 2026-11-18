@@ -2,8 +2,11 @@
 title: "LSTM 논문리뷰"
 toc: true
 toc_sticky: true
-categories: Paper
 use_math: true
+categories:
+  - Paper
+  - Architecture
+permalink: /paper/LSTM_reviews/
 ---
 
 > 원문링크: [LONG SHORT-TERM MEMORY](http://www.bioinf.jku.at/publications/older/2604.pdf)

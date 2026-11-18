@@ -2,8 +2,11 @@
 title: "자연어처리-5 Transformer(2)"
 toc: true
 toc_sticky: true
-categories: DL
 use_math: true
+categories:
+  - DL
+  - NLP
+permalink: /dl/transformer2/
 ---
 
 

@@ -2,6 +2,10 @@
 title: "Stable Diffusion(Tensorflow ver.) 누구나 쉽게 따라하기"
 toc: true
 published: true
+categories:
+  - DL
+  - Practice
+permalink: /stable_diffusion/
 ---
 
  

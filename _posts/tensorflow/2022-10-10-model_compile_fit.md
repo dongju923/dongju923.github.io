@@ -2,7 +2,9 @@
 title: "텐서플로우 모델 compile 및 fit"
 toc: true
 published: true
-categories: Tensorflow
+categories:
+  - Framework
+permalink: /tensorflow/model_compile_fit/
 ---
 
 모델이 생성되었으면 텐서플로우에서 제공하는 `compile()` 메서드와 `fit()` 메서드로 학습이 가능하다. 

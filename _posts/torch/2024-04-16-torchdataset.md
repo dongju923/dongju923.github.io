@@ -2,7 +2,9 @@
 title: "파이토치-커스텀 데이터셋 만들기"
 toc: true
 toc_sticky: true
-categories: Torch
+categories:
+  - Framework
+permalink: /torch/torchdataset/
 ---
 
 파이토치에서는 데이터를 좀 더 쉽게 다룰 수 있도록 하는 Dataset 클래스가 있다.  

@@ -1,7 +1,10 @@
 ---
 title: "오토인코더(Autoencoder)"
 toc: true
-categories: DL
+categories:
+  - DL
+  - Theory
+permalink: /dl/autoencoder/
 ---
 # 오토인코더(Autoencoder)란?
 

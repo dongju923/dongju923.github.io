@@ -2,71 +2,41 @@
 
 {% assign sum = site.posts | size %}
 
+<!--카테고리 목록과 표시 이름은 _data/category_tree.yml에서 관리-->
+<style>
+  #category_tag_menu .nav__sub-items { margin: 0; padding-left: 0.9em; }
+  #category_tag_menu .nav__sub-items li { font-size: 0.9em; }
+  #category_tag_menu .nav__sub-items li::before { content: "└ "; opacity: 0.5; }
+</style>
+
 <nav class="nav__list">
   <input id="ac-toc" name="accordion-toc" type="checkbox" />
   <label for="ac-toc">{{ site.data.ui-text[site.locale].menu_label }}</label>
   <ul class="nav__items" id="category_tag_menu">
       <!--전체 글 수-->
       <li>
-            <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">{{sum}}</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+            <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">{{sum}}</style> <span style="font-family:'Cafe24Oneprettynight';">개</style>
       </li>
-      <li>  <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Project" %}
-                        <li><a href="/categories/project" class="">프로젝트({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
+      <li>
+          {% for cat in site.data.category_tree %}
+            {% assign cat_posts = site.categories[cat.key] %}
+            {% if cat_posts %}
             <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "DL" %}
-                        <li><a href="/categories/dl" class="">딥러닝({{category[1].size}})</a></li>
+                <li><a href="{{ cat.url }}" class="">{{ cat.name }}({{ cat_posts.size }})</a>
+                    {% if cat.children %}
+                    <ul class="nav__sub-items">
+                        {% for sub in cat.children %}
+                            {% assign sub_posts = site.categories[sub.key] %}
+                            {% if sub_posts %}
+                                <li><a href="{{ sub.url }}" class="">{{ sub.name }}({{ sub_posts.size }})</a></li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
                     {% endif %}
-                {% endfor %}
+                </li>
             </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "ML" %}
-                        <li><a href="/categories/ml" class="">머신러닝({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Paper" %}
-                        <li><a href="/categories/paper" class="">논문리뷰({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Papercode" %}
-                        <li><a href="/categories/papercode" class="">코드구현({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Tensorflow" %}
-                        <li><a href="/categories/tensorflow" class="">텐서플로우({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Torch" %}
-                        <li><a href="/categories/torch" class="">파이토치({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Python" %}
-                        <li><a href="/categories/python" class="">Python({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
+            {% endif %}
+          {% endfor %}
       </li>
   </ul>
 </nav>

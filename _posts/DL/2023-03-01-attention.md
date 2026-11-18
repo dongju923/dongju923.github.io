@@ -2,8 +2,11 @@
 title: "자연어처리-4 Attention Mechanism"
 toc: true
 toc_sticky: true
-categories: DL
 use_math: true
+categories:
+  - DL
+  - NLP
+permalink: /dl/attention/
 ---
 
 지난시간에 seq2seq모델에 대해서 포스팅 했었다. [여기](https://dongju923.github.io/dl/seq2seq/)  

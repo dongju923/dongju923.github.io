@@ -2,7 +2,10 @@
 title: "케라스로 간단한 LSTM 구현하기!"
 toc: true
 toc_sticky: true
-categories: DL
+categories:
+  - DL
+  - Practice
+permalink: /dl/LSTM_example/
 ---
 
 ### LSTM(Long Short-Term Memory)이란?

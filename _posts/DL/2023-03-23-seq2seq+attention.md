@@ -2,7 +2,10 @@
 title: "seq2seq모델에 어텐션 매커니즘을 추가해보자"
 toc: true
 toc_sticky: true
-categories: DL
+categories:
+  - DL
+  - Practice
+permalink: /dl/seq2seq+attention/
 ---
 
 ### 어텐션을 적용한 seq2seq

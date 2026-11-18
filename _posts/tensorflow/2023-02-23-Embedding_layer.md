@@ -2,7 +2,9 @@
 title: "텐서플로우 Embedding Layer"
 toc: true
 toc_sticky: true
-categories: Tensorflow
+categories:
+  - Framework
+permalink: /tensorflow/Embedding_layer/
 ---
 
 

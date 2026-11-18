@@ -1,0 +1,12 @@
+{%- comment -%}
+  include.key에 해당하는 카테고리의 표시 이름(cat_name)과 페이지 주소(cat_url)를 찾는다.
+  _data/category_tree.yml에 없으면 key를 그대로 쓰고 /categories/#key 로 연결한다.
+{%- endcomment -%}
+{%- assign cat_name = include.key -%}
+{%- assign cat_url = include.key | slugify | prepend: '#' | prepend: site.category_archive.path -%}
+{%- for c in site.data.category_tree -%}
+  {%- if c.key == include.key -%}{%- assign cat_name = c.name -%}{%- assign cat_url = c.url -%}{%- endif -%}
+  {%- for sub in c.children -%}
+    {%- if sub.key == include.key -%}{%- assign cat_name = sub.name -%}{%- assign cat_url = sub.url -%}{%- endif -%}
+  {%- endfor -%}
+{%- endfor -%}

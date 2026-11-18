@@ -6,13 +6,13 @@
 {% endcase %}
 
 {% if site.category_archive.path %}
-  {% assign categories_sorted = page.categories | sort_natural %}
-
   <p class="page__taxonomy">
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].categories_label | default: "Categories:" }} </strong>
     <span itemprop="keywords">
-    {% for category_word in categories_sorted %}
-      <a href="{{ category_word | slugify | prepend: path_type | prepend: site.category_archive.path | relative_url }}" class="page__taxonomy-item p-category" rel="tag">{{ category_word }}</a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
+    {% comment %} 상위 → 하위 순서를 유지하기 위해 정렬하지 않고, 이름과 주소는 _data/category_tree.yml에서 찾는다 {% endcomment %}
+    {% for category_word in page.categories %}
+      {% include category-lookup.html key=category_word %}
+      <a href="{{ cat_url | relative_url }}" class="page__taxonomy-item p-category" rel="tag">{{ cat_name }}</a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
     {% endfor %}
     </span>
   </p>

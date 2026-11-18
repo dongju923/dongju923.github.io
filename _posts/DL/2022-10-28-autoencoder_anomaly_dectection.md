@@ -2,8 +2,11 @@
 title: "오토인코더를 이용한 이상탐지(Anomaly Detection with AutoEncoder)"
 toc: true
 toc_sticky: true
-categories: DL
 published: true
+categories:
+  - DL
+  - Practice
+permalink: /dl/autoencoder_anomaly_dectection/
 ---
 
 본 예제는 기본적으로 텐서플로우 공식 사이트 예제를 이용하고 추가로 코드를 작성하였습니다!

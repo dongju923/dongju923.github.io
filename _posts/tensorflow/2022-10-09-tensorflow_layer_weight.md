@@ -2,7 +2,9 @@
 title: "텐서플로우 커스텀 레이어 생성 및 가중치 확인"
 toc: true
 published: true
-categories: Tensorflow
+categories:
+  - Framework
+permalink: /tensorflow/tensorflow_layer_weight/
 ---
 
 텐서플로우에는 가중치를 초기화 및 확인이 가능하다. 일반적으로  layer의 `build()`함수가 작동할 때, 또는 모델에서 `call()`함수가 들어올 때 자동으로 초기화가 된다. 가중치와 편향은 각 `layer.get_weight()`로 확인이 가능한데, return값이 두개이므로(weight, bias) 변수를 두개 선언 해주어야 한다.

@@ -1,8 +1,11 @@
 ---
 title: "tsaug를 사용하여 시계열 데이터를 증강해보자!"
-categories: DL
 toc: true
 toc_sticky: true
+categories:
+  - DL
+  - Practice
+permalink: /dl/timeseries_augmentation/
 ---
 
 # tsaug 라이브러리

@@ -1,0 +1,34 @@
+{%- comment -%}
+  카테고리 페이지 글 목록. include.key: 카테고리 key (_data/category_tree.yml)
+  하위 카테고리가 있는 카테고리는 하위 카테고리별로 묶어서 보여준다.
+{%- endcomment -%}
+{% assign node = nil %}
+{% for c in site.data.category_tree %}
+  {% if c.key == include.key %}{% assign node = c %}{% endif %}
+{% endfor %}
+
+{% if node.children %}
+  {% for sub in node.children %}
+    {% assign sub_posts = site.categories[sub.key] %}
+    {% if sub_posts %}
+      <h2 class="archive__subtitle"><a href="{{ sub.url }}">{{ sub.name }}</a> ({{ sub_posts.size }})</h2>
+      {% for post in sub_posts %} {% include archive-single2.html type=page.entries_layout %} {% endfor %}
+    {% endif %}
+  {% endfor %}
+
+  {%- comment -%} 하위 카테고리가 지정되지 않은 글 {%- endcomment -%}
+  {% assign etc_count = 0 %}
+  {% for post in site.categories[include.key] %}
+    {% assign has_sub = false %}
+    {% for sub in node.children %}
+      {% if post.categories contains sub.key %}{% assign has_sub = true %}{% endif %}
+    {% endfor %}
+    {% unless has_sub %}
+      {% if etc_count == 0 %}<h2 class="archive__subtitle">기타</h2>{% endif %}
+      {% assign etc_count = etc_count | plus: 1 %}
+      {% include archive-single2.html type=page.entries_layout %}
+    {% endunless %}
+  {% endfor %}
+{% else %}
+  {% for post in site.categories[include.key] %} {% include archive-single2.html type=page.entries_layout %} {% endfor %}
+{% endif %}

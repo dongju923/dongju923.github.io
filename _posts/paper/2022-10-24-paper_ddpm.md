@@ -2,9 +2,12 @@
 title: "DDPM 논문리뷰"
 toc: true
 toc_sticky: true
-categories: Paper
 published: true
 use_math: true
+categories:
+  - Paper
+  - Vision
+permalink: /paper/paper_ddpm/
 ---
 > 원문링크: [Denoising Diffusion Probabilistic Models](https://arxiv.org/pdf/2006.11239.pdf)
 

@@ -1,7 +1,9 @@
 ---
 title: "텐서플로우 모델 만들기"
 toc: true
-categories: Tensorflow
+categories:
+  - Framework
+permalink: /tensorflow/tensorflow_model/
 ---
 
 텐서플로우 모델을 만드는 방법은 크게 세 가지가 있다.

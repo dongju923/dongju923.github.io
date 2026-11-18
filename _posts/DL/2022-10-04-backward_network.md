@@ -1,8 +1,10 @@
 ---
 title: "딥러닝 역전파"
+use_math: true
 categories:
   - DL
-use_math: true
+  - Theory
+permalink: /dl/backward_network/
 ---
 
 # 역전파(Back propagation)란?

@@ -3,6 +3,8 @@ title: "TanoGAN 논문리뷰"
 toc: true
 categories:
   - Paper
+  - TimeSeries
+permalink: /paper/tanogan_reviews/
 ---
 
 # TAnoGAN 논문 리뷰

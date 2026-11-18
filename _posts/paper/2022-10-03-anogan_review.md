@@ -2,6 +2,8 @@
 title: "AnoGAN 논문리뷰"
 categories:
   - Paper
+  - Vision
+permalink: /paper/anogan_review/
 ---
 
 > ### 원문링크: [Unsupervised Anomaly Detection with Generative Adversarial Networks to Guide Marker Discovery](https://arxiv.org/pdf/1703.05921.pdf)

@@ -1,8 +1,11 @@
 ---
 title: "ChatGPT API 사용하기"
-categories: DL
 toc: true
 toc_sticky: true
+categories:
+  - DL
+  - Practice
+permalink: /dl/ChatGPT_api/
 ---
 
 어떤 천재적인 고등학생이 리버스엔지니어링을 통해 vscode에서 chatgpt를 이용할 수 있게 만들어 놓았다.  

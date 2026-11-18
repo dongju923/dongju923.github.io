@@ -2,6 +2,8 @@
 title: "딥러닝 순전파"
 categories:
   - DL
+  - Theory
+permalink: /dl/forward_network/
 ---
 
 # 순전파(Foward propagation)란? 
