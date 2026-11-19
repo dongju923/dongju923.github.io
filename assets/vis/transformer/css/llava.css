@@ -1,0 +1,104 @@
+/* LLaVA 페이지 전용 스타일 (style.css 위에 얹는다) */
+:root {
+  --k-vision: #0ea5e9;
+  --k-proj: #a855f7;
+  --k-image: #f59e0b;
+  --k-text: #22c55e;
+}
+.k-vision { --kc: var(--k-vision); }
+.k-proj { --kc: var(--k-proj); }
+.k-image { --kc: var(--k-image); }
+
+.sub-h { font-size: 11px; text-transform: none; letter-spacing: 0; color: var(--text); margin: 12px 0 2px; opacity: 0.8; }
+
+/* ---------------------------------------------------------------- 이미지 + 패치 격자 */
+.img-wrap { position: relative; width: 100%; aspect-ratio: 1; margin-bottom: 6px; }
+.img-wrap canvas {
+  width: 100%; height: 100%;
+  image-rendering: pixelated;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--panel-2);
+  display: block;
+}
+.patch-grid { position: absolute; inset: 0; display: grid; }
+.patch-cell {
+  border: 1px dashed rgba(255, 255, 255, 0.35);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.18);
+  font: 9px var(--mono);
+  color: #fff;
+  text-shadow: 0 0 3px #000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 1px 2px;
+  cursor: pointer;
+}
+.patch-cell:hover { background: rgba(255, 255, 255, 0.18); }
+.patch-cell.on { border: 2px solid var(--k-image); background: rgba(245, 158, 11, 0.22); }
+.patch-grid.hide-labels .patch-cell { font-size: 0; }
+
+/* 파일 선택 input 은 줄바꿈이 안 되므로 라벨을 위로 올린다 */
+.row.file-row { flex-direction: column; align-items: stretch; gap: 3px; }
+.row.file-row input[type=file] { width: 100%; font-size: 11px; }
+
+/* ---------------------------------------------------------------- 시퀀스 스트립 */
+.seq-strip { display: flex; flex-wrap: wrap; gap: 2px; margin-top: 8px; }
+.seq-cell {
+  width: 13px; height: 17px;
+  border-radius: 2px;
+  font: 9px/17px var(--mono);
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0.85;
+}
+.seq-cell:hover { outline: 1px solid var(--text); }
+.seq-cell.on { outline: 2px solid var(--accent); opacity: 1; }
+.seq-cell.pre { background: var(--k-input); }
+.seq-cell.image { background: var(--k-image); }
+.seq-cell.post { background: var(--k-text); }
+.seq-cell.answer { background: var(--accent); }
+.seq-cell.sup { box-shadow: inset 0 -3px 0 var(--bwd); }
+.seq-legend { display: flex; flex-wrap: wrap; gap: 8px; font-size: 11px; color: var(--muted); margin-top: 6px; }
+.seq-legend i { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 3px; }
+
+/* ---------------------------------------------------------------- 타워 박스 */
+.tower {
+  width: 100%;
+  border: 1px solid var(--kc, var(--border));
+  border-radius: 12px;
+  padding: 10px 12px 12px;
+  margin: 2px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: color-mix(in srgb, var(--kc, var(--panel)) 6%, transparent);
+}
+.tower-head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 8px; width: 100%; margin-bottom: 8px; flex-wrap: wrap;
+}
+.tower-head b { font-size: 13px; }
+.tower-head .muted { font-size: 11px; }
+.tower.vision { --kc: var(--k-vision); }
+.tower.proj { --kc: var(--k-proj); }
+.tower.llm { --kc: var(--k-linear); }
+
+/* inspector 안의 패치 attention 오버레이 */
+.overlay-wrap { position: relative; width: 100%; max-width: 260px; aspect-ratio: 1; margin: 6px 0; }
+.overlay-wrap canvas { position: absolute; inset: 0; width: 100%; height: 100%; image-rendering: pixelated; border-radius: 6px; }
+.overlay-wrap canvas.ov { mix-blend-mode: normal; }
+/* canvas 는 img 와 달리 width 만 주면 높이가 늘어나지 않으므로 비율을 고정해 준다 */
+canvas.img-view {
+  width: 100%;
+  aspect-ratio: 1;
+  image-rendering: pixelated;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  display: block;
+}
+.two-col { display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-start; }
+.two-col > * { flex: 1 1 200px; min-width: 0; }
+.mini-note { font-size: 11px; color: var(--muted); margin-top: 4px; }

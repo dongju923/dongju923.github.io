@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Transformer Visualizer</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <h1>Transformer Visualizer</h1>
+      <span class="muted">Llama 스타일 decoder · forward / backward · shape 추적</span>
+    </div>
+    <nav class="pagenav">
+      <a href="index.html" class="on">텍스트 LLM</a>
+      <a href="llava.html">LLaVA (비전)</a>
+    </nav>
+    <div class="stats">
+      <div class="stat">
+        <span class="lbl">총 파라미터</span>
+        <span id="totalParams" class="num">0</span>
+        <span id="totalShort" class="muted"></span>
+      </div>
+      <div class="stat">
+        <span class="lbl">Loss</span>
+        <span id="lossVal" class="num">—</span>
+        <span id="phaseVal" class="muted"></span>
+      </div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <!-- 설정 패널 -->
+    <aside class="panel config">
+      <section>
+        <h2>입력</h2>
+        <textarea id="inputText" rows="3" spellcheck="false">hello transformer</textarea>
+        <div class="hint">문자 단위 toy tokenizer · 다음 토큰 예측(next-token) 으로 loss 계산</div>
+        <div id="tokenPreview" class="chips"></div>
+      </section>
+
+      <section>
+        <h2>모델 설정</h2>
+        <label class="row">
+          <span>프리셋</span>
+          <select id="preset"></select>
+        </label>
+        <div id="fields" class="fields"></div>
+        <label class="check"><input type="checkbox" id="tie_word_embeddings"> tie_word_embeddings (lm_head = embed)</label>
+        <div class="helpers">
+          <button type="button" class="small" id="hdAuto">head_dim = d / H</button>
+          <button type="button" class="small" id="iAuto">I ≈ 8/3 · d</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>파라미터 구성</h2>
+        <div id="paramBreakdown"></div>
+      </section>
+
+      <section>
+        <h2>실행</h2>
+        <div class="btns">
+          <button type="button" id="btnForward" class="fwd">▶ Forward</button>
+          <button type="button" id="btnBackward" class="bwd">◀ Backward</button>
+        </div>
+        <div class="btns">
+          <button type="button" id="btnUpdate">Adam 1 step</button>
+          <button type="button" id="btnTrain">학습 <span id="trainN">50</span> step</button>
+        </div>
+        <label class="row"><span>learning rate</span><input type="number" id="lr" value="0.01" step="0.001" min="0"></label>
+        <label class="row"><span>학습 step 수</span><input type="number" id="trainSteps" value="50" step="10" min="1"></label>
+        <label class="row"><span>애니메이션 속도</span><input type="range" id="speed" min="20" max="600" value="160"></label>
+        <label class="check"><input type="checkbox" id="follow" checked> 애니메이션 중 inspector 따라가기</label>
+        <button type="button" id="btnReset" class="small">가중치 재초기화</button>
+        <canvas id="lossChart" height="110"></canvas>
+      </section>
+
+      <div id="messages"></div>
+    </aside>
+
+    <!-- 아키텍처 다이어그램 -->
+    <section class="panel diagram-panel">
+      <div class="diagram-head">
+        <div class="legend">
+          <span class="lg k-embed">Embedding</span>
+          <span class="lg k-norm">Norm</span>
+          <span class="lg k-linear">Linear</span>
+          <span class="lg k-rope">RoPE</span>
+          <span class="lg k-attn">Attention</span>
+          <span class="lg k-act">Activation</span>
+          <span class="lg k-add">Residual</span>
+          <span class="lg k-head">LM head</span>
+        </div>
+        <div class="muted small-text">카드를 클릭하면 오른쪽에서 텐서와 기울기를 볼 수 있습니다.</div>
+      </div>
+      <div id="diagram"></div>
+    </section>
+
+    <!-- inspector -->
+    <aside class="panel inspector" id="inspector"></aside>
+  </main>
+
+  <div id="tooltip" hidden></div>
+
+  <script src="js/ui.js"></script>
+  <script src="js/model.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
